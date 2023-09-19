@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100.766" height="95.291" viewBox="0 0 100.766 95.291">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#17a3ed"/>
+      <stop offset="1" stop-color="#0083a2"/>
+    </linearGradient>
+  </defs>
+  <g id="ショップアイコン6" transform="translate(0 -13.91)">
+    <path id="パス_53" data-name="パス 53" d="M10.711,222.565a10.708,10.708,0,0,0,9.918-6.675,10.706,10.706,0,0,0,19.836,0,10.706,10.706,0,0,0,19.836,0,10.706,10.706,0,0,0,19.836,0,10.709,10.709,0,0,0,20.629-4.037H0A10.711,10.711,0,0,0,10.711,222.565Z" transform="translate(0 -158.987)" fill="url(#linear-gradient)"/>
+    <path id="パス_54" data-name="パス 54" d="M86.258,20.006a10.8,10.8,0,0,0-9.72-6.1H24.227a10.8,10.8,0,0,0-9.72,6.1L0,50.011H100.766Z" fill="url(#linear-gradient)"/>
+    <path id="パス_55" data-name="パス 55" d="M114.609,311.387a6.328,6.328,0,0,1-6.324,6.326H80.558V286.372H75.8v31.341H48.071a6.328,6.328,0,0,1-6.324-6.326V282.405H34.606v28.982a13.468,13.468,0,0,0,13.465,13.467h60.214a13.468,13.468,0,0,0,13.465-13.467V282.405h-7.141Z" transform="translate(-27.795 -215.653)" fill="url(#linear-gradient)"/>
+    <rect id="長方形_49" data-name="長方形 49" width="4.761" height="11.108" transform="translate(37.37 80.24)" fill="url(#linear-gradient)"/>
+    <rect id="長方形_50" data-name="長方形 50" width="4.761" height="11.108" transform="translate(58.635 80.24)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
