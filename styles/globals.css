@@ -13,3 +13,72 @@
 .brownBorderBottomColor {
   border-bottom: 1px solid #401d00;
 }
+
+.borderArrowBtn svg {
+  fill: #fff;
+  transition: fill 0.3s ease;
+}
+
+.borderArrowBtn:hover svg {
+  fill: #401d00;
+}
+
+.lContainerM {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.lContainerl {
+  max-width: 1640px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.hW-120pa {
+  width: 120% !important;
+  height: 120% !important;
+}
+
+.stickyTop {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 5;
+}
+
+.fit {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  font-family: "object-fit: cover;";
+}
+
+.uClearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.aspectFit {
+  position: relative;
+  width: 100%;
+}
+
+.aspectFit:before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+.aspectFit p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.verticalText {
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}

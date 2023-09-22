@@ -126,6 +126,51 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const targetElement = targetRef.current;
+    const scrollElement = scrollRef.current;
+
+    if (!targetElement || !scrollElement) return;
+
+    let rafId: number | null = null;
+
+    const handleScroll = () => {
+      rafId = requestAnimationFrame(() => {
+        const targetRect = targetElement.getBoundingClientRect();
+
+        if (targetRect.top <= 0) {
+          scrollElement.onwheel = (e: WheelEvent) => {
+            if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+            setIsSmoothScroll("horizontal");
+
+            const maxScrollLeft =
+              scrollElement.scrollWidth - scrollElement.clientWidth;
+
+            if (
+              (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
+              (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
+            ) {
+              setIsSmoothScroll("vertical");
+              return;
+            }
+            e.preventDefault();
+            scrollElement.scrollLeft += e.deltaY;
+          };
+        } else {
+          scrollElement.onwheel = null;
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+      if (scrollElement) scrollElement.onwheel = null;
+    };
+  }, [elements, setIsSmoothScroll]);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const newElements = [...elements];
@@ -796,9 +841,9 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section>
-          <div className="relative z-20 mt-[500px] bg-[#ead2ab] pb-36">
-            <div className="flex flex-col items-center text-[#401d00] pt-28 pb-10">
+        <section ref={targetRef}>
+          <div className="relative z-20 mt-[500px] bg-[#ead2ab] min-h-[100vh]">
+            <div className="flex flex-col items-center text-[#401d00] pt-40 pb-10">
               <p className="flex items-center gap-1">
                 <Image
                   src="/img/common/symbol.svg"
@@ -810,62 +855,68 @@ export default function Home() {
               </p>
               <h2 className={`text-6xl ${styles.yuGothic}`}>Magazine</h2>
             </div>
-            <div className="relative mt-12">
-              <p className="absolute top-[50%] translate-y-[-50%] right-0 text-[18vw] verticalText z-0">
+            <div className="relative">
+              <p className="absolute top-[50%] translate-y-[-50%] left-10 text-[22vw]">
                 Quatre.inc
               </p>
-              <ul className="flex flex-wrap gap-x-48 gap-y-36 px-10 relative z-10">
-                <li className="w-4/12">
-                  <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
-                  </a>
-                </li>
-                <li className="w-4/12">
-                  <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
-                  </a>
-                </li>
-                <li className="w-4/12">
-                  <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
-                  </a>
-                </li>
-                <li className="w-4/12">
-                  <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
-                  </a>
-                </li>
-                <li className="w-4/12">
-                  <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
-                  </a>
-                </li>
-              </ul>
+              <div
+                ref={scrollRef}
+                className="overflow-hidden relative"
+                id="scroll"
+              >
+                <ul className="flex flex-row gap-96 w-[260vw] overflow-x-auto px-10 mt-[10vh] pb-96">
+                  <li>
+                    <a href="" className="block">
+                      <Image
+                        src="/img/top/magazine-img1.jpg"
+                        alt=""
+                        width={560}
+                        height={346}
+                      />
+                    </a>
+                  </li>
+                  <li className="mt-[10vh]">
+                    <a href="" className="block">
+                      <Image
+                        src="/img/top/magazine-img1.jpg"
+                        alt=""
+                        width={560}
+                        height={346}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" className="block">
+                      <Image
+                        src="/img/top/magazine-img1.jpg"
+                        alt=""
+                        width={560}
+                        height={346}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" className="block">
+                      <Image
+                        src="/img/top/magazine-img1.jpg"
+                        alt=""
+                        width={560}
+                        height={346}
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" className="block">
+                      <Image
+                        src="/img/top/magazine-img1.jpg"
+                        alt=""
+                        width={560}
+                        height={346}
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>

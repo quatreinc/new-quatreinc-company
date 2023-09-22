@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 type Props = {
   color: "brown" | "white";
@@ -18,8 +18,32 @@ export const Header: FC<Props> = ({ color = "brown" }) => {
     { name: "ABOUT", href: "/about", current: false },
   ];
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="fixed w-full z-20">
+    <div
+      className={`fixed w-full z-50 transition-colors duration-300 ${
+        isScrolled ? "bg-[#401d00]" : ""
+      }`}
+    >
       <header className="flex justify-between items-center max-w-screen-2xl px-10 py-5 mx-auto">
         {router.pathname === "/" ? (
           <h1>

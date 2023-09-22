@@ -10,15 +10,15 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const Layout: FC<Props> = ({ title, description, color, children }) => {
+export const Layout: FC<Props> = (props) => {
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{props.title}</title>
+        <meta name="description" content={props.description} />
       </Head>
-      <Header color={color} />
-      <main>{children}</main>
+      <Header color={props.color} />
+      <main>{props.children}</main>
       <Footer />
     </>
   );
