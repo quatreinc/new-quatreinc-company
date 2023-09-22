@@ -204,7 +204,7 @@ export default function Home() {
                   : "transition-all duration-1000 translate-y-0 opacity-100"
               }`}
             >
-              <h2 className="text-white text-[6vw] yuGothic font-bold leading-tight">
+              <h2 className="text-white text-[8vw] yuGothic font-bold leading-tight">
                 <motion.span
                   animate={{ opacity: [0, 1], y: [15, 0] }}
                   transition={{ delay: 0, duration: 0.5 }}
