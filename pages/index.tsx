@@ -531,7 +531,7 @@ export default function Home() {
                   ? { opacity: [0, 1], y: [15, 0] }
                   : {}
               }
-              transition={{ delay: 0.5, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
               className="text-white opacity-0"
             >
               <ul className="flex flex-wrap gap-5 pb-7 border-b">
