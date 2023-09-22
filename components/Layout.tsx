@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { FC } from "react";
+import React, { FC, MutableRefObject } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -8,6 +8,7 @@ type Props = {
   description: string;
   color: "brown" | "white";
   children: React.ReactNode;
+  setRef?: MutableRefObject<null>;
 };
 
 export const Layout: FC<Props> = (props) => {
@@ -19,7 +20,7 @@ export const Layout: FC<Props> = (props) => {
       </Head>
       <Header color={props.color} />
       <main>{props.children}</main>
-      <Footer />
+      <Footer setRef={props.setRef} />
     </>
   );
 };

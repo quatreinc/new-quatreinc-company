@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { LinkButton } from "@/components/LinkButton";
-import useSmoothScroll from "@/hooks/useSmoothScroll";
 import { Parallax } from "react-parallax";
 
 export default function Home() {
@@ -12,12 +11,8 @@ export default function Home() {
   const [scrollX, setScrollX] = useState(0);
   const textContent = "Bring fun closer. Let’s share more fun. ";
   const repeatedText = textContent.repeat(50);
-  const scrollRef = useRef<HTMLDivElement | null>(null);
-  const [isSmoothScroll, setIsSmoothScroll] = useState<
-    "vertical" | "horizontal"
-  >("vertical");
-  useSmoothScroll({ gestureOrientation: isSmoothScroll });
-  const targetRef = useRef<HTMLDivElement | null>(null);
+  const parallaxEffect = useRef<HTMLLIElement | null>(null);
+  const [offsetY, setOffsetY] = useState(0);
 
   const [elements, setElements] = useState([
     { id: "element1", isVisible: false, ref: useRef(null), hasAnimated: false },
@@ -102,7 +97,7 @@ export default function Home() {
       hasAnimated: false,
     },
     {
-      id: "magazine",
+      id: "last",
       isVisible: false,
       ref: useRef(null),
       hasAnimated: false,
@@ -111,6 +106,18 @@ export default function Home() {
 
   const handleTagClick = useCallback((target: string) => {
     setActiveTab(target);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (parallaxEffect.current) {
+        const rect = parallaxEffect.current.getBoundingClientRect();
+        setOffsetY(rect.top);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -163,97 +170,99 @@ export default function Home() {
         title="Quatre Inc. | キャトル株式会社"
         description="たのしいをもっと身近にたのしいをもっと共有しよう。価値を提供し続け、地球上の笑顔を創造する。 笑顔のリーディングカンパニーを目指す。"
         color="white"
+        setRef={elements[16].ref}
       >
-        <div className="h-[100vh] brownBgColor flex justify-center items-center fixed w-full z-0 top-0 left-0">
+        <div className="h-[100vh] brownBgColor flex justify-center items-center w-full z-0 top-0 left-0 fixed">
           <div>
-            <h2
-              className={`text-white text-[6vw] ${styles.yuGothic} font-bold leading-tight`}
+            <div
+              className={`${
+                elements[16].isVisible
+                  ? "transition-all duration-1000 duration- translate-y-[-500px] opacity-0"
+                  : "transition-all duration-1000 translate-y-0 opacity-100"
+              }`}
             >
-              <motion.span
+              <h2 className="text-white text-[6vw] yuGothic font-bold leading-tight">
+                <motion.span
+                  animate={{ opacity: [0, 1], y: [15, 0] }}
+                  transition={{ delay: 0, duration: 0.5 }}
+                  className="inline-block"
+                >
+                  たのしい
+                </motion.span>
+                <motion.span
+                  animate={{ opacity: [0, 1], y: [15, 0] }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="text-[3vw] inline-block"
+                >
+                  を
+                </motion.span>
+                <motion.span
+                  animate={{ opacity: [0, 1], y: [15, 0] }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  className="inline-block"
+                >
+                  もっと身近
+                </motion.span>
+                <motion.span
+                  animate={{ opacity: [0, 1], y: [15, 0] }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  className="text-[3vw] inline-block"
+                >
+                  に
+                </motion.span>
+                <br />
+                <motion.span
+                  animate={{ opacity: [0, 1], y: [15, 0] }}
+                  transition={{ delay: 1.2, duration: 0.5 }}
+                  className="inline-block"
+                >
+                  たのしい
+                </motion.span>
+                <motion.span
+                  animate={{ opacity: [0, 1], y: [15, 0] }}
+                  transition={{ delay: 1.5, duration: 0.5 }}
+                  className="text-[3vw] inline-block"
+                >
+                  を
+                </motion.span>
+                <motion.span
+                  animate={{ opacity: [0, 1], y: [15, 0] }}
+                  transition={{ delay: 1.8, duration: 0.5 }}
+                  className="inline-block"
+                >
+                  もっと共有
+                </motion.span>
+                <motion.span
+                  animate={{ opacity: [0, 1], y: [15, 0] }}
+                  transition={{ delay: 1.8, duration: 0.5 }}
+                  className="text-[3vw] inline-block"
+                >
+                  しよう
+                </motion.span>
+              </h2>
+              <motion.p
                 animate={{ opacity: [0, 1], y: [15, 0] }}
-                transition={{ delay: 0, duration: 0.5 }}
-                className="inline-block"
+                transition={{ delay: 2.3, duration: 0.5 }}
+                className="text-white"
               >
-                たのしい
-              </motion.span>
-              <motion.span
-                animate={{ opacity: [0, 1], y: [15, 0] }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="text-[3vw] inline-block"
-              >
-                を
-              </motion.span>
-              <motion.span
-                animate={{ opacity: [0, 1], y: [15, 0] }}
-                transition={{ delay: 0.8, duration: 0.5 }}
-                className="inline-block"
-              >
-                もっと身近
-              </motion.span>
-              <motion.span
-                animate={{ opacity: [0, 1], y: [15, 0] }}
-                transition={{ delay: 0.8, duration: 0.5 }}
-                className="text-[3vw] inline-block"
-              >
-                に
-              </motion.span>
-              <br />
-              <motion.span
-                animate={{ opacity: [0, 1], y: [15, 0] }}
-                transition={{ delay: 1.2, duration: 0.5 }}
-                className="inline-block"
-              >
-                たのしい
-              </motion.span>
-              <motion.span
-                animate={{ opacity: [0, 1], y: [15, 0] }}
-                transition={{ delay: 1.5, duration: 0.5 }}
-                className="text-[3vw] inline-block"
-              >
-                を
-              </motion.span>
-              <motion.span
-                animate={{ opacity: [0, 1], y: [15, 0] }}
-                transition={{ delay: 1.8, duration: 0.5 }}
-                className="inline-block"
-              >
-                もっと共有
-              </motion.span>
-              <motion.span
-                animate={{ opacity: [0, 1], y: [15, 0] }}
-                transition={{ delay: 1.8, duration: 0.5 }}
-                className="text-[3vw] inline-block"
-              >
-                しよう
-              </motion.span>
-            </h2>
-            <motion.p
-              animate={{ opacity: [0, 1], y: [15, 0] }}
-              transition={{ delay: 2.3, duration: 0.5 }}
-              className="text-white"
-            >
-              Bring fun closer.
-              <br />
-              Let’s share more fun.
-            </motion.p>
+                Bring fun closer.
+                <br />
+                Let’s share more fun.
+              </motion.p>
+            </div>
           </div>
         </div>
         <div className="h-[90vh]"></div>
         <Parallax
           bgImage={"/img/top/attention-img1.jpg"}
-          strength={500}
-          bgClassName="hW-120pa"
-          bgImageStyle={{
-            height: "100%",
-            width: "100%",
-            objectFit: "cover",
-          }}
+          strength={200}
+          bgClassName="hW-120pa object-cover"
           contentClassName="h-full"
           className="w-1/2 h-[630px] float-right relative z-10 mr-10"
         >
           <div
             ref={elements[0].ref}
-            className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-10/12 z-20  ${
+            className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[500px] z-20  ${
               elements[0].isVisible
                 ? "opacity-100 transition-opacity duration-500"
                 : "opacity-0 transition-opacity duration-500"
@@ -283,19 +292,14 @@ export default function Home() {
         </Parallax>
         <Parallax
           bgImage={"/img/top/attention-img2.jpg"}
-          strength={500}
-          bgClassName="hW-120pa"
-          bgImageStyle={{
-            height: "100%",
-            width: "100%",
-            objectFit: "cover",
-          }}
+          strength={200}
+          bgClassName="hW-120pa object-cover"
           contentClassName="h-full"
           className="top-96 w-1/2 h-[520px] float-left relative z-10 ml-10"
         >
           <div
             ref={elements[1].ref}
-            className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-10/12 z-20  ${
+            className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[500px] z-20  ${
               elements[1].isVisible
                 ? "opacity-100 transition-opacity duration-500"
                 : "opacity-0 transition-opacity duration-500"
@@ -326,8 +330,8 @@ export default function Home() {
         <div className="clear-both"></div>
         <Parallax
           bgImage={"/img/top/attention-img3.jpg"}
-          strength={500}
-          bgClassName="object-cover hW-120pa"
+          strength={200}
+          bgClassName="hW-120pa object-cover"
           contentClassName="h-full"
           className="mt-[900px] w-1/2 h-[500px] relative z-10 mx-auto mb-96"
         >
@@ -358,7 +362,7 @@ export default function Home() {
         </Parallax>
         <Parallax
           bgImage={"/img/top/city-desc.jpg"}
-          strength={500}
+          strength={300}
           bgClassName="object-cover"
           contentClassName="h-full"
         >
@@ -373,7 +377,7 @@ export default function Home() {
                       ? { opacity: [0, 1], y: [15, 0] }
                       : {}
                   }
-                  transition={{ delay: 0.5, duration: 0.5 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
                 >
                   <Image
                     src="./img/common/logo.svg"
@@ -391,7 +395,7 @@ export default function Home() {
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
-                    transition={{ delay: 0.8, duration: 0.5 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
                   >
                     価値を提供
                   </motion.span>
@@ -403,7 +407,7 @@ export default function Home() {
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
-                    transition={{ delay: 1.1, duration: 0.5 }}
+                    transition={{ delay: 0.8, duration: 0.5 }}
                   >
                     し続け、
                   </motion.span>
@@ -415,7 +419,7 @@ export default function Home() {
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
-                    transition={{ delay: 1.4, duration: 0.5 }}
+                    transition={{ delay: 1.1, duration: 0.5 }}
                   >
                     地球上の笑顔を創造する。
                   </motion.span>
@@ -428,7 +432,7 @@ export default function Home() {
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
-                    transition={{ delay: 1.7, duration: 0.5 }}
+                    transition={{ delay: 1.5, duration: 0.5 }}
                   >
                     笑顔のリーディングカンパニー
                   </motion.span>
@@ -440,7 +444,7 @@ export default function Home() {
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
-                    transition={{ delay: 2, duration: 0.5 }}
+                    transition={{ delay: 1.8, duration: 0.5 }}
                   >
                     を目指す。
                   </motion.span>
@@ -453,7 +457,7 @@ export default function Home() {
                       ? { opacity: [0, 1], y: [15, 0] }
                       : {}
                   }
-                  transition={{ delay: 2.3, duration: 0.5 }}
+                  transition={{ delay: 2.1, duration: 0.5 }}
                 >
                   デジタルとアナログの融合で人々の交流を深めるとともに、
                   <br />
@@ -480,7 +484,7 @@ export default function Home() {
                   />{" "}
                   ニュース
                 </p>
-                <h2 className={`text-6xl ${styles.yuGothic}`}>News</h2>
+                <h2 className="text-6xl montserrat font-bold">News</h2>
               </div>
               <div className="mt-10 flex justify-center">
                 <LinkButton text={"More"} px={"px-2"} width={"w-[130px]"} />
@@ -559,7 +563,7 @@ export default function Home() {
                         />{" "}
                         ビジネス
                       </p>
-                      <h2 className={`text-6xl ${styles.yuGothic}`}>
+                      <h2 className="text-6xl montserrat font-bold">
                         Business
                       </h2>
                     </div>
@@ -775,17 +779,13 @@ export default function Home() {
           <div className="relative z-20 mt-[500px]">
             <Parallax
               bgImage={"/img/top/middle-img.jpg"}
-              strength={500}
-              bgImageStyle={{
-                height: "100%",
-                width: "100%",
-                objectFit: "cover",
-              }}
+              strength={200}
+              bgClassName="object-cover"
               contentClassName="h-full"
               className="w-11/12 h-[80vh] float-right uClearfix"
             ></Parallax>
           </div>
-          <div className="absolute bottom-[20vh] text-[#ead2aa] text-[126px] z-30">
+          <div className="absolute bottom-[15vh] text-[#ead2aa] text-[126px] z-30  montserrat font-bold">
             <p
               style={{
                 whiteSpace: "nowrap",
@@ -797,7 +797,10 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="relative z-20 mt-[500px] bg-[#ead2ab] pb-36">
+          <div className="relative z-20 mt-[500px] bg-[#ead2ab] pb-36 min-h-[130vh]">
+            <p className="absolute top-[50%] translate-y-[-50%] right-0 text-[30vh] verticalText z-0 text-[#401d00]">
+              Quatre.inc
+            </p>
             <div className="flex flex-col items-center text-[#401d00] pt-28 pb-10">
               <p className="flex items-center gap-1">
                 <Image
@@ -808,62 +811,195 @@ export default function Home() {
                 />{" "}
                 マガジン
               </p>
-              <h2 className={`text-6xl ${styles.yuGothic}`}>Magazine</h2>
+              <h2 className="text-6xl montserrat font-bold">Magazine</h2>
             </div>
-            <div className="relative mt-12">
-              <p className="absolute top-[50%] translate-y-[-50%] right-0 text-[18vw] verticalText z-0">
-                Quatre.inc
-              </p>
-              <ul className="flex flex-wrap gap-x-48 gap-y-36 px-10 relative z-10">
-                <li className="w-4/12">
+            <div className="relative">
+              <ul className="flex flex-wrap gap-x-[160px] gap-y-36 px-10 relative z-10">
+                <li
+                  ref={parallaxEffect}
+                  style={{
+                    transform: `translateY(${(offsetY - 500) * 0.2}px)`, // 視差の強度を調整
+                    width: `calc(100% / 2 - 160px)`,
+                  }}
+                  className="relative overflow-hidden"
+                >
                   <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
+                    <p className="absolute top-5 left-5 text-white border rounded-lg py-1 px-2 z-20">
+                      バッグ
+                    </p>
+                    <figure>
+                      <Image
+                        src="/img/top/magazine-img1.jpg"
+                        alt=""
+                        width={560}
+                        height={346}
+                        className="fit"
+                      />
+                      <figcaption>
+                        <div className="absolute px-5 bottom-5 text-white z-20">
+                          <time dateTime="2023.8.24">2023.8.24</time>
+                          <p className="border-t pt-3 mt-3">
+                            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+                          </p>
+                        </div>
+                      </figcaption>
+                    </figure>
+                    <p className="bg-[rgba(0,0,0,0.4)] w-full h-full absolute top-0 left-0 z-10"></p>
                   </a>
                 </li>
-                <li className="w-4/12">
+                <li
+                  ref={parallaxEffect}
+                  style={{
+                    transform: `translateY(${(offsetY - 500) * 0.4}px)`, // 視差の強度を調整
+                    width: `calc(100% / 2 - 160px)`,
+                  }}
+                  className="relative overflow-hidden"
+                >
                   <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
+                    <p className="absolute top-5 left-5 text-white border rounded-lg py-1 px-2 z-20">
+                      車
+                    </p>
+                    <figure>
+                      <Image
+                        src="/img/top/magazine-img2.jpg"
+                        alt=""
+                        width={560}
+                        height={346}
+                        className="fit"
+                      />
+                      <figcaption>
+                        <div className="absolute px-5 bottom-5 text-white z-20">
+                          <time dateTime="2023.8.24">2023.8.24</time>
+                          <p className="border-t pt-3 mt-3">
+                            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+                          </p>
+                        </div>
+                      </figcaption>
+                    </figure>
+                    <p className="bg-[rgba(0,0,0,0.4)] w-full h-full absolute top-0 left-0 z-10"></p>
                   </a>
                 </li>
-                <li className="w-4/12">
+                <li
+                  ref={parallaxEffect}
+                  style={{
+                    transform: `translateY(${(offsetY - 200) * 0.5}px)`, // 視差の強度を調整
+                    width: `calc(100% / 2 - 160px)`,
+                  }}
+                  className="relative overflow-hidden"
+                >
                   <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
+                    <p className="absolute top-5 left-5 text-white border rounded-lg py-1 px-2 z-20">
+                      車
+                    </p>
+                    <figure>
+                      <Image
+                        src="/img/top/magazine-img3.jpg"
+                        alt=""
+                        width={560}
+                        height={346}
+                        className="fit"
+                      />
+                      <figcaption>
+                        <div className="absolute px-5 bottom-5 text-white z-20">
+                          <time dateTime="2023.8.24">2023.8.24</time>
+                          <p className="border-t pt-3 mt-3">
+                            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+                          </p>
+                        </div>
+                      </figcaption>
+                    </figure>
+                    <p className="bg-[rgba(0,0,0,0.4)] w-full h-full absolute top-0 left-0 z-10"></p>
                   </a>
                 </li>
-                <li className="w-4/12">
-                  <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
-                  </a>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="h-[100vh] relative overflow-hidden">
+            <div className="flex items-center gap-8 absolute bottom-12">
+              <ul className={styles.slideshow}>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img1.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
                 </li>
-                <li className="w-4/12">
-                  <a href="">
-                    <Image
-                      src="/img/top/magazine-img1.jpg"
-                      alt=""
-                      width={560}
-                      height={346}
-                    />
-                  </a>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img2.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
+                </li>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img3.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
+                </li>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img4.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
+                </li>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img5.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
+                </li>
+              </ul>
+              <ul className={styles.slideshow}>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img1.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
+                </li>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img2.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
+                </li>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img3.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
+                </li>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img4.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
+                </li>
+                <li>
+                  <Image
+                    src="/img/top/bottom-img5.jpg"
+                    alt="キャトル画像"
+                    width={650}
+                    height={750}
+                  />
                 </li>
               </ul>
             </div>

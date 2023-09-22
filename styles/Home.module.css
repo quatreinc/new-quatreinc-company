@@ -1,9 +1,3 @@
-.yuGothic {
-  font-family: YuGothic, "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans",
-    "メイリオ", Meiryo, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3",
-    sans-serif;
-}
-
 .middleCatchCopy {
   background-image: url("/img/top/city-desc.jpg");
   background-size: cover;
@@ -12,4 +6,23 @@
   height: 100vh;
   width: 100%;
   position: relative;
+}
+
+.slideshow {
+  display: flex;
+  gap: 30px;
+  animation: loop-slide 50s infinite linear 1s both;
+}
+
+.slideshow li {
+  width: calc(100vw / 5);
+}
+
+@keyframes loop-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
