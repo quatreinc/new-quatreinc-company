@@ -2,9 +2,16 @@ import { Layout } from "@/components/Layout";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LinkButton } from "@/components/LinkButton";
 import { Parallax } from "react-parallax";
+
+type Element = {
+  id: string;
+  isVisible: boolean;
+  ref: React.RefObject<HTMLElement>;
+  hasAnimated: boolean;
+};
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("全て");
@@ -61,6 +68,12 @@ export default function Home() {
       hasAnimated: false,
     },
     {
+      id: "news",
+      isVisible: false,
+      ref: useRef(null),
+      hasAnimated: false,
+    },
+    {
       id: "business1",
       isVisible: false,
       ref: useRef(null),
@@ -107,6 +120,16 @@ export default function Home() {
   const handleTagClick = useCallback((target: string) => {
     setActiveTab(target);
   }, []);
+
+  const elementsObject = useMemo(() => {
+    return elements.reduce<Record<string, (typeof elements)[0]>>(
+      (acc, element) => {
+        acc[element.id] = element;
+        return acc;
+      },
+      {}
+    );
+  }, [elements]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -170,13 +193,13 @@ export default function Home() {
         title="Quatre Inc. | キャトル株式会社"
         description="たのしいをもっと身近にたのしいをもっと共有しよう。価値を提供し続け、地球上の笑顔を創造する。 笑顔のリーディングカンパニーを目指す。"
         color="white"
-        setRef={elements[16].ref}
+        setRef={elementsObject.last?.ref}
       >
         <div className="h-[100vh] brownBgColor flex justify-center items-center w-full z-0 top-0 left-0 fixed">
           <div>
             <div
               className={`${
-                elements[16].isVisible
+                elementsObject.last?.isVisible
                   ? "transition-all duration-1000 duration- translate-y-[-500px] opacity-0"
                   : "transition-all duration-1000 translate-y-0 opacity-100"
               }`}
@@ -261,9 +284,9 @@ export default function Home() {
           className="w-1/2 h-[630px] float-right relative z-10 mr-10"
         >
           <div
-            ref={elements[0].ref}
+            ref={elementsObject.element1?.ref}
             className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[500px] z-20  ${
-              elements[0].isVisible
+              elementsObject.element1?.isVisible
                 ? "opacity-100 transition-opacity duration-500"
                 : "opacity-0 transition-opacity duration-500"
             }`}
@@ -284,7 +307,7 @@ export default function Home() {
           </div>
           <p
             className={`bg-[rgba(0,0,0,0.6)] w-full h-full absolute top-0 left-0 z-10 ${
-              elements[0].isVisible
+              elementsObject.element1?.isVisible
                 ? "opacity-100 transition-opacity duration-500"
                 : "opacity-0 transition-opacity duration-500"
             }`}
@@ -298,9 +321,9 @@ export default function Home() {
           className="top-96 w-1/2 h-[520px] float-left relative z-10 ml-10"
         >
           <div
-            ref={elements[1].ref}
+            ref={elementsObject.element2?.ref}
             className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[500px] z-20  ${
-              elements[1].isVisible
+              elementsObject.element2?.isVisible
                 ? "opacity-100 transition-opacity duration-500"
                 : "opacity-0 transition-opacity duration-500"
             }`}
@@ -321,7 +344,7 @@ export default function Home() {
           </div>
           <p
             className={`bg-[rgba(0,0,0,0.6)] w-full h-full absolute top-0 left-0 z-10 ${
-              elements[1].isVisible
+              elementsObject.element2?.isVisible
                 ? "opacity-100 transition-opacity duration-500"
                 : "opacity-0 transition-opacity duration-500"
             }`}
@@ -336,9 +359,9 @@ export default function Home() {
           className="mt-[900px] w-1/2 h-[500px] relative z-10 mx-auto mb-96"
         >
           <div
-            ref={elements[2].ref}
+            ref={elementsObject.element3?.ref}
             className={`absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-10/12 z-20  ${
-              elements[2].isVisible
+              elementsObject.element3?.isVisible
                 ? "opacity-100 transition-opacity duration-500"
                 : "opacity-0 transition-opacity duration-500"
             }`}
@@ -354,7 +377,7 @@ export default function Home() {
           </div>
           <p
             className={`bg-[rgba(0,0,0,0.6)] w-full h-full absolute top-0 left-0 z-10 ${
-              elements[2].isVisible
+              elementsObject.element3?.isVisible
                 ? "opacity-100 transition-opacity duration-500"
                 : "opacity-0 transition-opacity duration-500"
             }`}
@@ -371,9 +394,9 @@ export default function Home() {
               <div className="flex flex-col items-center">
                 <motion.p
                   className="w-72 mb-5 opacity-0"
-                  ref={elements[3].ref}
+                  ref={elementsObject.middleCatch1?.ref}
                   animate={
-                    elements[3].hasAnimated
+                    elementsObject.middleCatch1?.hasAnimated
                       ? { opacity: [0, 1], y: [15, 0] }
                       : {}
                   }
@@ -389,9 +412,9 @@ export default function Home() {
                 <h2 className="text-white text-4xl leading-relaxed font-bold">
                   <motion.span
                     className="text-[#efcaca] inline-block opacity-0"
-                    ref={elements[4].ref}
+                    ref={elementsObject.middleCatch2?.ref}
                     animate={
-                      elements[4].hasAnimated
+                      elementsObject.middleCatch2?.hasAnimated
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
@@ -401,9 +424,9 @@ export default function Home() {
                   </motion.span>
                   <motion.span
                     className="inline-block opacity-0"
-                    ref={elements[5].ref}
+                    ref={elementsObject.middleCatch3?.ref}
                     animate={
-                      elements[5].hasAnimated
+                      elementsObject.middleCatch3?.hasAnimated
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
@@ -413,9 +436,9 @@ export default function Home() {
                   </motion.span>
                   <motion.span
                     className="inline-block opacity-0"
-                    ref={elements[6].ref}
+                    ref={elementsObject.middleCatch4?.ref}
                     animate={
-                      elements[6].hasAnimated
+                      elementsObject.middleCatch4?.hasAnimated
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
@@ -426,9 +449,9 @@ export default function Home() {
                   <br />
                   <motion.span
                     className="text-[#efcaca] inline-block opacity-0"
-                    ref={elements[7].ref}
+                    ref={elementsObject.middleCatch5?.ref}
                     animate={
-                      elements[7].hasAnimated
+                      elementsObject.middleCatch5?.hasAnimated
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
@@ -438,9 +461,9 @@ export default function Home() {
                   </motion.span>
                   <motion.span
                     className="inline-block opacity-0"
-                    ref={elements[8].ref}
+                    ref={elementsObject.middleCatch6?.ref}
                     animate={
-                      elements[8].hasAnimated
+                      elementsObject.middleCatch6?.hasAnimated
                         ? { opacity: [0, 1], y: [15, 0] }
                         : {}
                     }
@@ -451,9 +474,9 @@ export default function Home() {
                 </h2>
                 <motion.p
                   className="text-center text-white opacity-0 mt-5 leading-loose"
-                  ref={elements[9].ref}
+                  ref={elementsObject.middleCatch7?.ref}
                   animate={
-                    elements[9].hasAnimated
+                    elementsObject.middleCatch7?.hasAnimated
                       ? { opacity: [0, 1], y: [15, 0] }
                       : {}
                   }
@@ -471,10 +494,22 @@ export default function Home() {
             </div>
           </section>
         </Parallax>
-        <section className="top-0">
+        <section className="top-0" ref={elementsObject.news?.ref}>
           <div className="lContainerM flex gap-20 bg-[#401d00] relative py-32 mb-32">
-            <div>
-              <div className="flex flex-col items-center text-white">
+            <motion.div
+              animate={
+                elementsObject.news?.hasAnimated
+                  ? { opacity: [0, 1], y: [15, 0] }
+                  : {}
+              }
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="opacity-0"
+            >
+              <motion.div
+                animate={elementsObject.news?.hasAnimated ? { scale: 1.3 } : {}}
+                transition={{ delay: 0.8, duration: 0.5 }}
+                className="flex flex-col items-center text-white scale-0"
+              >
                 <p className="flex items-center gap-1">
                   <Image
                     src="/img/common/symbol.svg"
@@ -484,13 +519,21 @@ export default function Home() {
                   />{" "}
                   ニュース
                 </p>
-                <h2 className="text-6xl montserrat font-bold">News</h2>
-              </div>
+                <h2 className="text-4xl montserrat font-bold">News</h2>
+              </motion.div>
               <div className="mt-10 flex justify-center">
                 <LinkButton text={"More"} px={"px-2"} width={"w-[130px]"} />
               </div>
-            </div>
-            <div className="text-white">
+            </motion.div>
+            <motion.div
+              animate={
+                elementsObject.news?.hasAnimated
+                  ? { opacity: [0, 1], y: [15, 0] }
+                  : {}
+              }
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="text-white opacity-0"
+            >
               <ul className="flex flex-wrap gap-5 pb-7 border-b">
                 <li>
                   <button
@@ -544,7 +587,7 @@ export default function Home() {
                   </p>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section>
@@ -577,7 +620,7 @@ export default function Home() {
                   </p>
                   <div
                     className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                      elements[10].isVisible
+                      elementsObject.business1?.isVisible
                         ? "opacity-100 translate-y-0 transition-all duration-500"
                         : "opacity-0 translate-y-10 transition-all duration-500"
                     }`}
@@ -598,7 +641,7 @@ export default function Home() {
                   </div>
                   <div
                     className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                      elements[11].isVisible
+                      elementsObject.business2?.isVisible
                         ? "opacity-100 translate-y-0 transition-all duration-500"
                         : "opacity-0 translate-y-10 transition-all duration-500"
                     }`}
@@ -619,7 +662,7 @@ export default function Home() {
                   </div>
                   <div
                     className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                      elements[12].isVisible
+                      elementsObject.business3?.isVisible
                         ? "opacity-100 translate-y-0 transition-all duration-500"
                         : "opacity-0 translate-y-10 transition-all duration-500"
                     }`}
@@ -644,7 +687,7 @@ export default function Home() {
                   </div>
                   <div
                     className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                      elements[13].isVisible
+                      elementsObject.business4?.isVisible
                         ? "opacity-100 translate-y-0 transition-all duration-500"
                         : "opacity-0 translate-y-10 transition-all duration-500"
                     }`}
@@ -667,7 +710,7 @@ export default function Home() {
                   </div>
                   <div
                     className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                      elements[14].isVisible
+                      elementsObject.business5?.isVisible
                         ? "opacity-100 translate-y-0 transition-all duration-500"
                         : "opacity-0 translate-y-10 transition-all duration-500"
                     }`}
@@ -692,7 +735,7 @@ export default function Home() {
                   </div>
                   <div
                     className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                      elements[15].isVisible
+                      elementsObject.business6?.isVisible
                         ? "opacity-100 translate-y-0 transition-all duration-500"
                         : "opacity-0 translate-y-10 transition-all duration-500"
                     }`}
@@ -717,7 +760,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="pt-80 pb-40 w-6/12">
-                <p ref={elements[10].ref}>
+                <p ref={elementsObject.business1?.ref}>
                   <Image
                     src="/img/top/business-it.jpg"
                     alt="IT事業"
@@ -726,7 +769,7 @@ export default function Home() {
                     className="fit"
                   />
                 </p>
-                <p className="mt-10" ref={elements[11].ref}>
+                <p className="mt-10" ref={elementsObject.business2?.ref}>
                   <Image
                     src="/img/top/business-ma.jpg"
                     alt="M&A事業"
@@ -735,7 +778,7 @@ export default function Home() {
                     className="fit"
                   />
                 </p>
-                <p className="mt-10" ref={elements[12].ref}>
+                <p className="mt-10" ref={elementsObject.business3?.ref}>
                   <Image
                     src="/img/top/business-community.jpg"
                     alt="コミュニティ事業"
@@ -744,7 +787,7 @@ export default function Home() {
                     className="fit"
                   />
                 </p>
-                <p className="mt-10" ref={elements[13].ref}>
+                <p className="mt-10" ref={elementsObject.business4?.ref}>
                   <Image
                     src="/img/top/business-advertising.jpg"
                     alt="広告代理事業"
@@ -753,7 +796,7 @@ export default function Home() {
                     className="fit"
                   />
                 </p>
-                <p className="mt-10" ref={elements[14].ref}>
+                <p className="mt-10" ref={elementsObject.business5?.ref}>
                   <Image
                     src="/img/top/business-consulting.jpg"
                     alt="コンサルティング事業"
@@ -762,7 +805,7 @@ export default function Home() {
                     className="fit"
                   />
                 </p>
-                <p className="mt-10" ref={elements[15].ref}>
+                <p className="mt-10" ref={elementsObject.business6?.ref}>
                   <Image
                     src="/img/top/business-social-welfare.jpg"
                     alt="社会福祉事業"
