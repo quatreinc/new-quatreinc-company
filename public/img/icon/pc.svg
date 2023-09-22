@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="108.389" height="95.291" viewBox="0 0 108.389 95.291">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="-20.234" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff6c00"/>
+      <stop offset="1" stop-color="#a84100"/>
+    </linearGradient>
+  </defs>
+  <g id="PCディスプレイのアイコン素材_4" data-name="PCディスプレイのアイコン素材 4" transform="translate(0 -30.938)">
+    <rect id="長方形_46" data-name="長方形 46" width="48.052" height="5.187" transform="translate(30.17 121.042)" fill="url(#linear-gradient)"/>
+    <path id="パス_51" data-name="パス 51" d="M105.564,30.938H2.828A2.838,2.838,0,0,0,0,33.769v66.883a2.836,2.836,0,0,0,2.828,2.831H105.564a2.835,2.835,0,0,0,2.825-2.831V33.769A2.838,2.838,0,0,0,105.564,30.938Zm-51.37,2.448a1.058,1.058,0,1,1-1.058,1.058A1.062,1.062,0,0,1,54.195,33.386Zm47.46,61.909H6.738V39.131h94.917V95.294Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+    <path id="パス_52" data-name="パス 52" d="M182.087,385.563H150.994v9.189l-8.478,3.533h48.052l-8.481-3.533Z" transform="translate(-112.346 -279.552)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

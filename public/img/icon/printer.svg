@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97.278" height="101.522" viewBox="0 0 97.278 101.522">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a7a100"/>
+      <stop offset="1" stop-color="#878d00"/>
+    </linearGradient>
+  </defs>
+  <g id="プリンターの無料アイコン3" transform="translate(-10.701)">
+    <path id="パス_77" data-name="パス 77" d="M105.467,32.566A8.553,8.553,0,0,0,99.4,30.053H89.68V15.439L74.241,0H29V30.053H19.278A8.575,8.575,0,0,0,10.7,38.629V72.523A8.571,8.571,0,0,0,19.278,81.1H29v20.423H89.68V81.1H99.4a8.577,8.577,0,0,0,8.576-8.576V38.629A8.557,8.557,0,0,0,105.467,32.566ZM72.729,4.208,85.087,16.567H72.729ZM33.046,4.045l35.637,0V20.613H85.635v9.44H33.046ZM85.635,97.478H33.046v-18.4h0V59.915H85.632V81.1h0V97.478Zm18.3-24.955A4.528,4.528,0,0,1,99.4,77.055H89.678V55.867H29V77.055h-9.72a4.525,4.525,0,0,1-4.531-4.531V38.629A4.53,4.53,0,0,1,19.278,34.1H99.4a4.534,4.534,0,0,1,4.531,4.531V72.523Z" fill="url(#linear-gradient)"/>
+    <rect id="長方形_58" data-name="長方形 58" width="35.061" height="4.046" transform="translate(41.81 66.655)" fill="url(#linear-gradient)"/>
+    <rect id="長方形_59" data-name="長方形 59" width="35.061" height="4.045" transform="translate(41.81 77.058)" fill="url(#linear-gradient)"/>
+    <rect id="長方形_60" data-name="長方形 60" width="16.568" height="4.045" transform="translate(41.81 86.305)" fill="url(#linear-gradient)"/>
+    <path id="パス_78" data-name="パス 78" d="M339.6,213.369a3.325,3.325,0,1,0,3.325,3.326A3.325,3.325,0,0,0,339.6,213.369Z" transform="translate(-261.016 -171.061)" fill="url(#linear-gradient)"/>
+    <path id="パス_79" data-name="パス 79" d="M410.982,213.369a3.325,3.325,0,1,0,3.324,3.326A3.325,3.325,0,0,0,410.982,213.369Z" transform="translate(-318.245 -171.061)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+.footerMov {
+  padding: 30px 40px;
+  background-image: url("/img/footer/mov.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  max-width: 380px;
+  height: 100%;
+  font-size: 1vw;
+  align-items: center;
+  position: relative;
+}
+
+.footerMov:after {
+  content: "";
+  background-image: url("/img/icon/arrow-right-white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  width: 13px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.footerContent:after {
+  content: "";
+  background-image: url("/img/icon/arrow-right-white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  width: 13px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
