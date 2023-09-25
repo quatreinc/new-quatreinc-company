@@ -121,6 +121,7 @@ export default function Home() {
     setActiveTab(target);
   }, []);
 
+  // elementsのidをキーとするオブジェクトを生成
   const elementsObject = useMemo(() => {
     return elements.reduce<Record<string, (typeof elements)[0]>>(
       (acc, element) => {
@@ -131,6 +132,7 @@ export default function Home() {
     );
   }, [elements]);
 
+  // スクロール時のパララックス効果のYオフセットハンドリング
   useEffect(() => {
     const handleScroll = () => {
       if (parallaxEffect.current) {
@@ -143,6 +145,7 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // スクロール時のパララックス効果のXオフセットハンドリング
   useEffect(() => {
     const handleScroll = () => {
       const moveAmount = window.scrollY % (textContent.length * 126);
@@ -155,6 +158,7 @@ export default function Home() {
     };
   }, []);
 
+  // インターセクションオブザーバーを使用し、要素がビューポート内に入った際のハンドリング
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
