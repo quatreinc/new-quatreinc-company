@@ -132,7 +132,7 @@ export default function Home() {
         color="white"
         setRef={elementsObject.last?.ref}
       >
-        <div className="h-[90dvh] sm:h-[100vh] brownBgColor flex justify-center items-center w-full z-0 top-0 left-0 fixed">
+        <div className="h-[100vh] brownBgColor flex justify-center items-center w-full z-0 top-0 left-0 fixed">
           <div>
             <div
               className={`${
@@ -213,7 +213,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="h-[80dvh] sm:h-[90vh]"></div>
+        <div className="h-[80vh] sm:h-[90vh]"></div>
         <Parallax
           bgImage={"/img/top/attention-img1.jpg"}
           strength={200}
