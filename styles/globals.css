@@ -17,16 +17,6 @@ main {
     sans-serif;
 }
 
-.height100 {
-  height: 100vh;
-  height: 100dvh;
-}
-
-.height90 {
-  height: 90vh;
-  height: 90dvh;
-}
-
 .montserrat {
   font-family: "Montserrat", sans-serif;
 }
