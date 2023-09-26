@@ -10,13 +10,25 @@
 
 .slideshow {
   display: flex;
-  column-gap: 30px;
-  animation: loop-slide 50s infinite linear 1s both;
+}
+
+.slideshow ul {
+  display: flex;
+  animation: loop infinite linear 40s;
+}
+
+@keyframes loop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .slideshow li {
-  width: calc(100vw / 2);
-  height: 150px;
+  min-width: 160px;
+  height: 120px;
 }
 
 .magazineList {
@@ -29,26 +41,20 @@
 
 @media (min-width: 640px) {
   .slideshow li {
-    width: calc(100vw / 5);
-    height: 130px;
+    width: calc(100vw / 3);
+    height: 200px;
   }
 }
 
 @media (min-width: 768px) {
   .magazineListItem {
-    width: calc(100% - 160px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .slideshow li {
-    width: calc(100vw / 5);
-    height: 150px;
+    width: calc(100% / 2 - 20px);
   }
 }
 
 @media (min-width: 1280px) {
   .slideshow li {
+    width: calc(100vw / 5);
     height: auto;
   }
 
@@ -58,14 +64,5 @@
 
   .magazineListItem {
     width: calc(100% / 2 - 160px);
-  }
-}
-
-@keyframes loop-slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
   }
 }

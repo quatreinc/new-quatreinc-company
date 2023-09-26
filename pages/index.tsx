@@ -976,11 +976,11 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="relative z-20 mt-[300px] sm:mt-[500px] bg-[#ead2ab] pb-36 min-h-[130vh] overflow-hidden">
-            <p className="absolute top-[50%] translate-y-[-50%] right-[-10%] xl:right-0 text-[35vw] xl:text-[15vw]  verticalText z-0 text-[#401d00]">
+          <div className="relative z-20 mt-[300px] sm:mt-[500px] bg-[#ead2ab] pb-36 overflow-hidden w-[100vw]">
+            <p className="absolute top-[50%] translate-y-[-50%] right-[0] xl:right-0 sm:text-[22vw] xl:text-[15vw] font-bold verticalText z-0 text-[#401d00]">
               Quatre.inc
             </p>
-            <div className="flex flex-col items-center text-[#401d00] pt-28 pb-10">
+            <div className="flex flex-col items-center text-[#401d00] pt-28 pb-10 sm:pb-20">
               <p className="flex items-center gap-1">
                 <Image
                   src="/img/common/symbol.svg"
@@ -996,7 +996,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <ul
-                className={`flex flex-wrap gap-x-[160px] gap-y-36 px-5 sm:px-10 relative z-10 ${styles.magazineList}`}
+                className={`flex flex-wrap gap-x-[30px] xl:gap-x-[160px] gap-y-36 px-5 sm:px-10 relative z-10 ${styles.magazineList}`}
               >
                 <li
                   ref={parallaxEffect}
@@ -1097,141 +1097,103 @@ export default function Home() {
         </section>
         <section>
           <div className="h-[100vh] relative overflow-hidden">
-            <div className="flex items-center gap-x-8 absolute bottom-5 sm:bottom-12">
-              <ul className={styles.slideshow}>
-                <li>
-                  <Image
-                    src="/img/top/bottom-img1.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li>
-                  <Image
-                    src="/img/top/bottom-img2.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li className="hidden sm:block">
-                  <Image
-                    src="/img/top/bottom-img3.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li className="hidden sm:block">
-                  <Image
-                    src="/img/top/bottom-img4.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li className="hidden sm:block">
-                  <Image
-                    src="/img/top/bottom-img5.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-              </ul>
-              <ul className={styles.slideshow}>
-                <li className="hidden sm:block">
-                  <Image
-                    src="/img/top/bottom-img1.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li className="hidden sm:block">
-                  <Image
-                    src="/img/top/bottom-img2.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li>
-                  <Image
-                    src="/img/top/bottom-img3.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li>
-                  <Image
-                    src="/img/top/bottom-img4.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li className="hidden sm:block">
-                  <Image
-                    src="/img/top/bottom-img5.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-              </ul>
-              <ul className={`block sm:hidden ${styles.slideshow}`}>
-                <li>
-                  <Image
-                    src="/img/top/bottom-img5.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li>
-                  <Image
-                    src="/img/top/bottom-img1.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-              </ul>
-              <ul className={`block sm:hidden ${styles.slideshow}`}>
-                <li>
-                  <Image
-                    src="/img/top/bottom-img2.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-                <li>
-                  <Image
-                    src="/img/top/bottom-img3.jpg"
-                    alt="キャトル画像"
-                    width={650}
-                    height={750}
-                    className="fit"
-                  />
-                </li>
-              </ul>
+            <div className="flex items-center absolute bottom-5 sm:bottom-12">
+              <div className={`gap-6 ${styles.slideshow}`}>
+                <ul className="gap-6">
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img1.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img2.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img3.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img4.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img5.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                </ul>
+                <ul className="gap-6">
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img1.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img2.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img3.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img4.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                  <li>
+                    <Image
+                      src="/img/top/bottom-img5.jpg"
+                      alt="キャトル画像"
+                      width={650}
+                      height={750}
+                      className="fit"
+                    />
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
