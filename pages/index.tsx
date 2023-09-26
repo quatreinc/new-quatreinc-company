@@ -132,7 +132,7 @@ export default function Home() {
         color="white"
         setRef={elementsObject.last?.ref}
       >
-        <div className="h-[100vh] brownBgColor flex justify-center items-center w-full z-0 top-0 left-0 fixed">
+        <div className="h-[100lvh] h-[100vh] brownBgColor flex justify-center items-center w-full z-0 top-0 left-0 fixed">
           <div>
             <div
               className={`${
