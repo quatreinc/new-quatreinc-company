@@ -213,7 +213,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="h-[90vh]"></div>
+        <div className="h-[90lvh] h-[90vh]"></div>
         <Parallax
           bgImage={"/img/top/attention-img1.jpg"}
           strength={200}
