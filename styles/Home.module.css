@@ -10,12 +10,55 @@
 
 .slideshow {
   display: flex;
-  gap: 30px;
+  column-gap: 30px;
   animation: loop-slide 50s infinite linear 1s both;
 }
 
 .slideshow li {
-  width: calc(100vw / 5);
+  width: calc(100vw / 2);
+  height: 150px;
+}
+
+.magazineList {
+  margin: 0;
+}
+
+.magazineListItem {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .slideshow li {
+    width: calc(100vw / 5);
+    height: 130px;
+  }
+}
+
+@media (min-width: 768px) {
+  .magazineListItem {
+    width: calc(100% - 160px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .slideshow li {
+    width: calc(100vw / 5);
+    height: 150px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .slideshow li {
+    height: auto;
+  }
+
+  .magazineList {
+    margin: 100px 0 0;
+  }
+
+  .magazineListItem {
+    width: calc(100% / 2 - 160px);
+  }
 }
 
 @keyframes loop-slide {

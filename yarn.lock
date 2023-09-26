@@ -367,6 +367,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/ua-parser-js@npm:^0.7.37":
+  version: 0.7.37
+  resolution: "@types/ua-parser-js@npm:0.7.37"
+  checksum: dde3733d30801d96959c73fd164c5431080f00bfa5b6bec79eff4726349c9832b3dbac5ce07dae29033cb8bb878b459d63ba25a31aee4e64b37272b90d1f1ca9
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/parser@npm:^5.4.2 || ^6.0.0":
   version: 6.7.2
   resolution: "@typescript-eslint/parser@npm:6.7.2"
@@ -3233,6 +3240,7 @@ __metadata:
     "@types/node": 20.6.2
     "@types/react": 18.2.22
     "@types/react-dom": 18.2.7
+    "@types/ua-parser-js": ^0.7.37
     autoprefixer: 10.4.15
     eslint: 8.49.0
     eslint-config-next: 13.4.19
@@ -3245,6 +3253,7 @@ __metadata:
     react-parallax: ^3.5.1
     tailwindcss: 3.3.3
     typescript: 5.2.2
+    ua-parser-js: ^1.0.36
   languageName: unknown
   linkType: soft
 
@@ -4003,6 +4012,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 0f4da2f15e6f1245e49db15801dbee52f2bbfb267e1c39225afdab5afee1a72839cd86000e65ee9d7e4dfaff12239d28beaf5ee431357fcced15fb08583d72ca
+  languageName: node
+  linkType: hard
+
+"ua-parser-js@npm:^1.0.36":
+  version: 1.0.36
+  resolution: "ua-parser-js@npm:1.0.36"
+  checksum: 5b2c8a5e3443dfbba7624421805de946457c26ae167cb2275781a2729d1518f7067c9d5c74c3b0acac4b9ff3278cae4eace08ca6eecb63848bc3b2f6a63cc975
   languageName: node
   linkType: hard
 

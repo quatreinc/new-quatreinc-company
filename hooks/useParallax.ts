@@ -14,6 +14,7 @@ export const useParallax = ({
   elementsProps: ElementProps[];
   textContentProps: string | undefined;
 }) => {
+  const [repeatedText, setRepeatedText] = useState("");
   const [elements, setElements] = useState(elementsProps);
   const parallaxEffect = useRef<HTMLLIElement | null>(null);
   const [offsetY, setOffsetY] = useState(0);
@@ -44,6 +45,7 @@ export const useParallax = ({
   useEffect(() => {
     if (textContentProps) {
       const handleScroll = () => {
+        setRepeatedText(textContentProps.repeat(50));
         const moveAmount = window.scrollY % (textContentProps.length * 126);
         setScrollX(-moveAmount);
       };
@@ -90,5 +92,5 @@ export const useParallax = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return { elementsObject, offsetY, scrollX };
+  return { elementsObject, parallaxEffect, offsetY, scrollX, repeatedText };
 };

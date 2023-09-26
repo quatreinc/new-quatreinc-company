@@ -1,5 +1,6 @@
 .footerMov {
-  padding: 30px 40px;
+  margin: 0 auto;
+  padding: 20px 40px;
   background-image: url("/img/footer/mov.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -7,7 +8,7 @@
   width: 100%;
   max-width: 380px;
   height: 100%;
-  font-size: 1vw;
+  font-size: 3.8647342995vw;
   align-items: center;
   position: relative;
 }
@@ -40,4 +41,42 @@
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
+}
+
+.footerWrap {
+  max-width: 1640px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footerSubMenu {
+  /* padding: 1.25rem 2.5rem; */
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1s ease-out;
+  position: relative;
+}
+
+.footerSubMenuShow {
+  max-height: 500px;
+}
+
+@media (min-width: 640px) {
+  .footerMov {
+    margin: 0;
+    padding: 25px 40px;
+    font-size: 1vw;
+  }
+
+  .footerWrap {
+    width: 90%;
+  }
+
+  .footerSubMenu {
+    margin: 10px 0 0;
+    padding: 0;
+    height: auto;
+    overflow: visible;
+    font-size: 1vw;
+  }
 }

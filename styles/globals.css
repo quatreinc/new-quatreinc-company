@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 
+body {
+  font-size: 3.8647342995vw;
+}
+
 .yuGothic {
   font-family: YuGothic, "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans",
     "メイリオ", Meiryo, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3",
@@ -92,4 +96,45 @@
 .verticalText {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
+}
+
+.plus {
+  position: relative;
+}
+
+.plus::before,
+.plus::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.5s;
+}
+
+.plus::after {
+  transform: translateY(-50%) rotate(90deg);
+  transition: transform 0.5s;
+}
+
+.plusMinus::before {
+  opacity: 0;
+}
+.plusMinus::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+
+  .plus::before,
+  .plus::after {
+    display: none;
+  }
 }

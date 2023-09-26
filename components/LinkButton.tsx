@@ -7,6 +7,8 @@ type Props = {
   py?: string;
   color?: "brown" | "white";
   text?: string;
+  target?: string;
+  link: string;
 };
 
 export const LinkButton: FC<Props> = ({
@@ -15,10 +17,12 @@ export const LinkButton: FC<Props> = ({
   py = "py-2",
   color = "white",
   text = "詳しくはこちら",
+  link = "/",
+  target = "",
 }) => {
   return (
     <Link
-      href=""
+      href={link}
       prefetch={false}
       className={`borderArrowBtn inline-block border rounded-full relative transition-colors duration-300 text-center ${width} ${px} ${py} ${
         color === "white"
