@@ -976,7 +976,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="relative z-20 mt-[300px] sm:mt-[500px] bg-[#ead2ab] pb-36 min-h-[130vh]">
+          <div className="relative z-20 mt-[300px] sm:mt-[500px] bg-[#ead2ab] pb-36 min-h-[130vh] overflow-hidden">
             <p className="absolute top-[50%] translate-y-[-50%] right-[-10%] xl:right-0 text-[35vw] xl:text-[15vw]  verticalText z-0 text-[#401d00]">
               Quatre.inc
             </p>
