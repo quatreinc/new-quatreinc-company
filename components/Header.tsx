@@ -55,23 +55,41 @@ export const Header: FC<Props> = ({ color = "brown" }) => {
           {router.pathname === "/" ? (
             <h1>
               <Link href="/" prefetch={false}>
-                <Image
-                  src="/img/common/logo.svg"
-                  alt="Quatre.inc"
-                  width={135}
-                  height={43}
-                />
+                {color === "brown" ? (
+                  <Image
+                    src="/img/common/logo-brown.svg"
+                    alt="Quatre.inc"
+                    width={135}
+                    height={43}
+                  />
+                ) : (
+                  <Image
+                    src="/img/common/logo.svg"
+                    alt="Quatre.inc"
+                    width={135}
+                    height={43}
+                  />
+                )}
               </Link>
             </h1>
           ) : (
             <p>
               <Link href="/" prefetch={false}>
-                <Image
-                  src="/img/common/logo-brown.svg"
-                  alt="Quatre.inc"
-                  width={135}
-                  height={43}
-                />
+                {color === "brown" ? (
+                  <Image
+                    src="/img/common/logo-brown.svg"
+                    alt="Quatre.inc"
+                    width={135}
+                    height={43}
+                  />
+                ) : (
+                  <Image
+                    src="/img/common/logo.svg"
+                    alt="Quatre.inc"
+                    width={135}
+                    height={43}
+                  />
+                )}
               </Link>
             </p>
           )}

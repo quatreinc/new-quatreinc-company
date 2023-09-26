@@ -726,7 +726,7 @@ export default function Home() {
           ) : (
             <div className="relative z-20 bg-white">
               <div className="lContainerM flex gap-20 justify-between">
-                <div className="w-6/12 relative">
+                <div className="w-6/12">
                   <div className="stickyTop pt-20 top-10 h-[100vh]">
                     <div className="flex justify-start">
                       <div className="flex flex-col items-center text-[#401d00]">
@@ -736,7 +736,7 @@ export default function Home() {
                             alt="quatre Symbol"
                             width={20}
                             height={20}
-                          />{" "}
+                          />
                           ビジネス
                         </p>
                         <h2 className="text-6xl montserrat font-bold">
