@@ -116,7 +116,7 @@ export const Footer: FC<Props> = (props) => {
                     }`}
                   >
                     <ul className="pb-5 sm:py-0 px-10 sm:px-0">
-                      <li className="mb-1">
+                      <li className="mb-3 sm:mb-1">
                         <a
                           href=""
                           className="hover:opacity-60 transition-opacity duration-500"
@@ -124,7 +124,7 @@ export const Footer: FC<Props> = (props) => {
                           IT事業
                         </a>
                       </li>
-                      <li className="mb-1">
+                      <li className="mb-3 sm:mb-1">
                         <a
                           href=""
                           className="hover:opacity-60 transition-opacity duration-500"
@@ -132,7 +132,7 @@ export const Footer: FC<Props> = (props) => {
                           コミュニティ事業
                         </a>
                       </li>
-                      <li className="mb-1">
+                      <li className="mb-3 sm:mb-1">
                         <a
                           href=""
                           className="hover:opacity-60 transition-opacity duration-500"
@@ -140,7 +140,7 @@ export const Footer: FC<Props> = (props) => {
                           広告代理事業
                         </a>
                       </li>
-                      <li className="mb-1">
+                      <li className="mb-3 sm:mb-1">
                         <a
                           href=""
                           className="hover:opacity-60 transition-opacity duration-500"
@@ -148,7 +148,7 @@ export const Footer: FC<Props> = (props) => {
                           コンサルティング事業
                         </a>
                       </li>
-                      <li className="mb-1">
+                      <li className="mb-3 sm:mb-1">
                         <a
                           href=""
                           className="hover:opacity-60 transition-opacity duration-500"
@@ -193,7 +193,7 @@ export const Footer: FC<Props> = (props) => {
                     } ${isPlusOpen.about ? styles.footerSubMenuShow : ""}`}
                   >
                     <ul className="pb-5 sm:py-0 px-10 sm:px-0">
-                      <li className="mb-1 sm:w-28">
+                      <li className="mb-3 sm:mb-1 sm:w-28">
                         <a
                           href=""
                           className="hover:opacity-60 transition-opacity duration-500"
@@ -201,7 +201,7 @@ export const Footer: FC<Props> = (props) => {
                           CEOメッセージ
                         </a>
                       </li>
-                      <li className="mb-1">
+                      <li className="mb-3 sm:mb-1">
                         <a
                           href=""
                           className="hover:opacity-60 transition-opacity duration-500"
@@ -209,7 +209,7 @@ export const Footer: FC<Props> = (props) => {
                           会社概要
                         </a>
                       </li>
-                      <li className="mb-1">
+                      <li className="mb-3 sm:mb-1">
                         <a
                           href=""
                           className="hover:opacity-60 transition-opacity duration-500"
