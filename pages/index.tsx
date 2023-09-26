@@ -448,7 +448,7 @@ export default function Home() {
             >
               <motion.div
                 animate={elementsObject.news?.hasAnimated ? { scale: 1.3 } : {}}
-                transition={{ delay: 0.8, duration: 0.5 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
                 className="flex flex-col items-center text-white scale-0"
               >
                 <p className="flex items-center gap-1">
@@ -457,7 +457,7 @@ export default function Home() {
                     alt="quatre Symbol"
                     width={20}
                     height={20}
-                  />{" "}
+                  />
                   ニュース
                 </p>
                 <h2 className="text-[8vw] sm:text-4xl montserrat font-bold">
