@@ -11,7 +11,7 @@ type Props = {
   link: string;
 };
 
-export const LinkButton: FC<Props> = ({
+export const LinkButtonMemo: FC<Props> = ({
   width = "w-[190px]",
   px = "px-4",
   py = "py-2",
@@ -60,3 +60,5 @@ export const LinkButton: FC<Props> = ({
     </Link>
   );
 };
+
+export const LinkButton = React.memo(LinkButtonMemo);

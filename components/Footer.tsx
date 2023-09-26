@@ -11,7 +11,7 @@ type PlusOpen = {
   business: boolean;
 };
 
-export const Footer: FC<Props> = (props) => {
+export const FooterMemo: FC<Props> = (props) => {
   const [isPlusOpen, setIsPlusOpen] = useState<PlusOpen>({
     about: false,
     business: false,
@@ -256,3 +256,5 @@ export const Footer: FC<Props> = (props) => {
     </footer>
   );
 };
+
+export const Footer = React.memo(FooterMemo);

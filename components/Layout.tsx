@@ -11,7 +11,7 @@ type Props = {
   setRef?: MutableRefObject<null>;
 };
 
-export const Layout: FC<Props> = (props) => {
+export const LayoutMemo: FC<Props> = (props) => {
   return (
     <>
       <Head>
@@ -24,3 +24,5 @@ export const Layout: FC<Props> = (props) => {
     </>
   );
 };
+
+export const Layout = React.memo(LayoutMemo);

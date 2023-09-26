@@ -26,6 +26,12 @@ const Business = () => {
       hasAnimated: false,
     },
     {
+      id: "advertising",
+      isVisible: false,
+      ref: useRef(null),
+      hasAnimated: false,
+    },
+    {
       id: "last",
       isVisible: false,
       ref: useRef(null),
@@ -186,12 +192,21 @@ const Business = () => {
             </div>
             <div className="w-6/12 order-1">
               <div>
-                <Parallax
-                  bgImage={"/img/business/ma-img.png"}
-                  strength={200}
-                  bgClassName="object-cover"
-                  contentClassName="h-[400px]"
-                ></Parallax>
+                <motion.div
+                  animate={
+                    elementsObject.ma?.isVisible
+                      ? { opacity: [0, 1], y: [0, 20] }
+                      : { opacity: [1, 0], y: [20, 0] }
+                  }
+                  transition={{ delay: 1, duration: 0.5 }}
+                >
+                  <Image
+                    src="/img/business/ma-img.png"
+                    alt="コミュニティ事業"
+                    width={619}
+                    height={704}
+                  />
+                </motion.div>
               </div>
             </div>
           </div>
@@ -202,7 +217,7 @@ const Business = () => {
           className="bg-[#ead2ab] relative"
           ref={elementsObject.community?.ref}
         >
-          <div className="lContainerl pt-48 pb-32 flex gap-10">
+          <div className="lContainerl pt-48 pb-56 flex gap-10">
             <div className="w-6/12">
               <motion.div
                 animate={
@@ -211,9 +226,9 @@ const Business = () => {
                     : { opacity: [1, 0], y: [0, 15] }
                 }
                 transition={{ delay: 0.1, duration: 0.3 }}
-                className="montserrat font-bold text-7xl text-[#401d00] absolute top-20 right-20 opacity-0"
+                className="montserrat font-bold text-7xl text-[#401d00] absolute bottom-20 left-20 opacity-0"
               >
-                <p>01</p>
+                <p>03</p>
               </motion.div>
               <div>
                 <div className="text-[#401d00]">
@@ -262,10 +277,10 @@ const Business = () => {
               <motion.div
                 animate={
                   elementsObject.community?.isVisible
-                    ? { y: [30, 0] }
-                    : { y: [0, 30] }
+                    ? { y: [600, -50] }
+                    : { y: [-50, 600] }
                 }
-                transition={{ delay: 1, duration: 0.3 }}
+                transition={{ delay: 1, duration: 1, ease: "easeOut" }}
                 className="absolute bottom-[-190px] right-0 w-[76%] h-[460px] bg-[#ead2ab]"
               >
                 <Image
@@ -280,76 +295,75 @@ const Business = () => {
         </div>
       </section>
       <section>
-        <div className="bg-[#401d00] relative" ref={elementsObject.it?.ref}>
-          <div className="lContainerl pt-48 pb-32 flex gap-10">
-            <div className="w-6/12">
+        <div
+          className="bg-[#401d00] relative"
+          ref={elementsObject.advertising?.ref}
+        >
+          <div className="lContainerl pt-48 pb-32">
+            <motion.div
+              animate={
+                elementsObject.advertising?.isVisible
+                  ? { opacity: [0, 1], y: [15, 0] }
+                  : { opacity: [1, 0], y: [0, 15] }
+              }
+              transition={{ delay: 0.1, duration: 0.3 }}
+              className="montserrat font-bold text-7xl text-white absolute top-20 right-20 opacity-0"
+            >
+              <p>04</p>
+            </motion.div>
+            <div className="text-white">
               <motion.div
                 animate={
-                  elementsObject.it?.isVisible
+                  elementsObject.advertising?.isVisible
                     ? { opacity: [0, 1], y: [15, 0] }
                     : { opacity: [1, 0], y: [0, 15] }
                 }
-                transition={{ delay: 0.1, duration: 0.3 }}
-                className="montserrat font-bold text-7xl text-[#401d00] absolute top-20 right-20 opacity-0"
+                transition={{ delay: 0.3, duration: 0.3 }}
               >
-                <p>01</p>
+                <p>Advertising</p>
+                <p className="text-4xl font-bold">広告代理事業</p>
               </motion.div>
-              <div>
-                <div className="text-[#401d00]">
-                  <motion.div
-                    animate={
-                      elementsObject.it?.isVisible
-                        ? { opacity: [0, 1], y: [15, 0] }
-                        : { opacity: [1, 0], y: [0, 15] }
-                    }
-                    transition={{ delay: 0.3, duration: 0.3 }}
-                  >
-                    <p>Information Technology</p>
-                    <p className="text-4xl font-bold">IT事業</p>
-                  </motion.div>
-                  <motion.h2
-                    animate={
-                      elementsObject.it?.isVisible
-                        ? { opacity: [0, 1], y: [15, 0] }
-                        : { opacity: [1, 0], y: [0, 15] }
-                    }
-                    transition={{ delay: 0.5, duration: 0.3 }}
-                    className="text-2xl font-bold mt-12 mb-4"
-                  >
-                    新たなビジネスチャンスを開拓する
-                    <br />
-                    アプリケーションを提供
-                  </motion.h2>
-                </div>
-                <motion.div
-                  animate={
-                    elementsObject.it?.isVisible
-                      ? { opacity: [0, 1], y: [15, 0] }
-                      : { opacity: [1, 0], y: [0, 15] }
-                  }
-                  transition={{ delay: 0.7, duration: 0.3 }}
-                >
-                  <p className="mb-6">
-                    Webサイトやアプリケーションの制作は、企業やブランドがデジタルな世界でのプレゼンスを確立するための重要なステップです。
-                  </p>
-                  <p>
-                    現代の消費者やビジネスパートナーは、情報を得るため、またサービスや製品を利用するために、Webのプラットフォームを日常的に活用しています。
-                    そのため、効果的なWebサイトやアプリケーションは、ブランドの信頼性や利便性を向上させるだけでなく、新しいビジネスチャンスを開拓するキーともなり得ます。
-                  </p>
-                </motion.div>
-              </div>
+              <motion.h2
+                animate={
+                  elementsObject.advertising?.isVisible
+                    ? { opacity: [0, 1], y: [15, 0] }
+                    : { opacity: [1, 0], y: [0, 15] }
+                }
+                transition={{ delay: 0.5, duration: 0.3 }}
+                className="text-2xl font-bold mt-12 mb-4"
+              >
+                デジタル広告から伝統的なメディアまで、
+                <br />
+                予算や目的に応じた柔軟なプランニングを実現いたします。
+              </motion.h2>
             </div>
-            <div className="w-6/12">
-              <div>
-                <Parallax
-                  bgImage={"/img/business/it-img.jpg"}
-                  strength={200}
-                  bgClassName="hW-120pa object-cover"
-                  contentClassName="h-[400px]"
-                ></Parallax>
-              </div>
-            </div>
+            <motion.div
+              animate={
+                elementsObject.advertising?.isVisible
+                  ? { opacity: [0, 1], y: [15, 0] }
+                  : { opacity: [1, 0], y: [0, 15] }
+              }
+              transition={{ delay: 0.7, duration: 0.3 }}
+              className="text-white"
+            >
+              市場分析からクリエイティブ制作、広告展開までの一連の流れをトータルでサポート。常に変わりゆくトレンドに敏感に反応し、
+              <br />
+              クライアントのブランドや商品が際立つ戦略を組み立てます。
+            </motion.div>
           </div>
+          <ul className="flex">
+            <li className="">
+              <p>
+                <img src="/img/icon/pc.svg" alt="" />
+              </p>
+              <h3>ウェブプロモーション</h3>
+              <p>
+                ホームページやSNSページを作っても、お客様に見てもらえなければ・・・。
+                しっかりと、集客から追客までをお手伝いいたします。
+                方法は、リスティング広告だけではありません！ぜひ、一度ご相談ください。
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
     </Layout>

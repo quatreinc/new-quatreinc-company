@@ -8,7 +8,7 @@ type Props = {
   color: "brown" | "white";
 };
 
-export const Header: FC<Props> = ({ color = "brown" }) => {
+export const HeaderMemo: FC<Props> = ({ color = "brown" }) => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -217,3 +217,5 @@ export const Header: FC<Props> = ({ color = "brown" }) => {
     </div>
   );
 };
+
+export const Header = React.memo(HeaderMemo);
