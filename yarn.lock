@@ -3251,6 +3251,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-parallax: ^3.5.1
+    swiper: ^10.3.0
     tailwindcss: 3.3.3
     typescript: 5.2.2
     ua-parser-js: ^1.0.36
@@ -3806,6 +3807,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^10.3.0":
+  version: 10.3.0
+  resolution: "swiper@npm:10.3.0"
+  checksum: 7b89adc440de725c35d613933808fd4321da041769b57d2bb17bb9f0bb05ef6927b8d8251888df87b83326ce149d0dfcd3f9f2f15261dfd59d5f07d2d7828868
   languageName: node
   linkType: hard
 
