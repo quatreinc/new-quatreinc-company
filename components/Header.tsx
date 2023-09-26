@@ -54,21 +54,25 @@ export const Header: FC<Props> = ({ color = "brown" }) => {
         <div className="flex justify-between items-center max-w-screen-2xl px-5 sm:px-10 py-5 mx-auto relative z-40">
           {router.pathname === "/" ? (
             <h1>
-              <Image
-                src="/img/common/logo.svg"
-                alt="Quatre.inc"
-                width={135}
-                height={43}
-              />
+              <Link href="/" prefetch={false}>
+                <Image
+                  src="/img/common/logo.svg"
+                  alt="Quatre.inc"
+                  width={135}
+                  height={43}
+                />
+              </Link>
             </h1>
           ) : (
             <p>
-              <Image
-                src="/img/common/logo-brown.svg"
-                alt="Quatre.inc"
-                width={135}
-                height={43}
-              />
+              <Link href="/" prefetch={false}>
+                <Image
+                  src="/img/common/logo-brown.svg"
+                  alt="Quatre.inc"
+                  width={135}
+                  height={43}
+                />
+              </Link>
             </p>
           )}
           <ul className="gap-5 items-center hidden sm:flex">
