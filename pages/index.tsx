@@ -122,7 +122,8 @@ export default function Home() {
   useEffect(() => {
     const parser = new UAParser();
     setDevice(parser.getDevice().type);
-  }, []);
+    console.log(parser.getDevice().type);
+  }, [device]);
 
   return (
     <>
@@ -538,34 +539,222 @@ export default function Home() {
           </div>
         </section>
         <section>
-          {device === "mobile" || device === "tablet" ? (
-            <div className="relative z-20 bg-white pt-20 sm:pt-32">
-              <div className="flex justify-center">
-                <div className="flex flex-col items-center text-[#401d00]">
-                  <p className="flex items-center gap-1">
-                    <Image
-                      src="/img/common/symbol.svg"
-                      alt="quatre Symbol"
-                      width={20}
-                      height={20}
-                    />{" "}
-                    ビジネス
-                  </p>
-                  <h2 className="text-[10vw] sm:text-6xl montserrat font-bold">
-                    Business
-                  </h2>
-                </div>
+          <div className="relative z-20 bg-white pt-20 sm:pt-32 block xl:hidden">
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center text-[#401d00]">
+                <p className="flex items-center gap-1">
+                  <Image
+                    src="/img/common/symbol.svg"
+                    alt="quatre Symbol"
+                    width={20}
+                    height={20}
+                  />{" "}
+                  ビジネス
+                </p>
+                <h2 className="text-[10vw] sm:text-6xl montserrat font-bold">
+                  Business
+                </h2>
               </div>
-              <p className="text-[#401d00] font-bold mt-2 text-center">
-                Quatre.Incが手掛けるビジネスをご紹介します。
-                <br />
-                私たちは、常に価値を提供することで、
-                <br />
-                人々の笑顔を増やすことに取り組んでいます。
-              </p>
-              <ul>
-                <li>
-                  <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+            </div>
+            <p className="text-[#401d00] font-bold mt-2 text-center">
+              Quatre.Incが手掛けるビジネスをご紹介します。
+              <br />
+              私たちは、常に価値を提供することで、
+              <br />
+              人々の笑顔を増やすことに取り組んでいます。
+            </p>
+            <ul>
+              <li>
+                <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <p>01.Information Technology</p>
+                  <h2 className="text-3xl font-bold mb-5">IT事業</h2>
+                  <p>
+                    IT事業は、現代社会のイノベーションの先頭を走る分野となっています。日々進化するテクノロジーを活用し、ビジネスや日常生活をより便利かつ効率的にするソリューションを提供します。この分野での取り組みは、社会の持続的な成長を支えるとともに、新しいビジネスチャンスを創出しています。顧客のニーズを正確に捉え、先進技術を組み合わせることで、未来のライフスタイルや業務プロセスを再定義する可能性が広がっています。
+                  </p>
+                  <div className="mt-5 flex">
+                    <LinkButton
+                      text={"More"}
+                      px={"px-2"}
+                      width={"w-[130px]"}
+                      color="brown"
+                      link=""
+                    />
+                  </div>
+                </div>
+                <Parallax
+                  bgImage={"/img/top/business-it-sp.jpg"}
+                  strength={200}
+                  bgClassName="object-cover"
+                  contentClassName="h-[250px] sm:h-[400px]"
+                ></Parallax>
+              </li>
+              <li>
+                <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <p>02.Mergers and Acquisitions</p>
+                  <h2 className="text-3xl font-bold mb-5">M&A事業</h2>
+                  <p>
+                    Quatre.IncのM&A事業は、新しい可能性を追求し、強力なシナジーを生む道を開きます。異なる企業の知識や技術を統合し、共同での成長を実現することが私たちの目標です。M&Aを通じて、持続可能な競争力を築き、業界のリーダーシップを確立し、お客様に更なるサービスと価値を提供いたします。
+                  </p>
+                  <div className="mt-5 flex">
+                    <LinkButton
+                      text={"More"}
+                      px={"px-2"}
+                      width={"w-[130px]"}
+                      color="brown"
+                      link=""
+                    />
+                  </div>
+                </div>
+                <Parallax
+                  bgImage={"/img/top/business-ma-sp.jpg"}
+                  strength={200}
+                  bgClassName="object-cover"
+                  contentClassName="h-[250px] sm:h-[400px]"
+                ></Parallax>
+              </li>
+              <li>
+                <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <p>03.Community</p>
+                  <h2 className="text-3xl font-bold mb-5">コミュニティ事業</h2>
+                  <p>
+                    Quatre.Incのコミュニティは、人々を繋ぎ合わせ、共通の価値や目的を共有する場を提供します。
+                    私たちのサービスを通じて、日々の生活に笑顔をもたらすことを目指しています。
+                    一人ひとりの幸せな瞬間を増やすために、最適なコミュニティとの出会いをサポートします。
+                  </p>
+                  <div className="mt-5 flex">
+                    <LinkButton
+                      text={"More"}
+                      px={"px-2"}
+                      width={"w-[130px]"}
+                      color="brown"
+                      link=""
+                    />
+                  </div>
+                </div>
+                <Parallax
+                  bgImage={"/img/top/business-community-sp.jpg"}
+                  strength={200}
+                  bgClassName="object-cover"
+                  contentClassName="h-[250px] sm:h-[400px]"
+                ></Parallax>
+              </li>
+              <li>
+                <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <p>04.Advertising</p>
+                  <h2 className="text-3xl font-bold mb-5">広告代理事業</h2>
+                  <p>
+                    Quatre.Incは、デジタルからアナログまで、多彩なプロモーションをトータルにサポートします。ホームページの集客、
+                    店頭の楽しい企画、即効のリスティング広告、街中の注目の看板、そして心を掴むノベルティの提案。
+                    お客様の目と心をキャッチする最適な戦略を展開しております。
+                  </p>
+                  <div className="mt-5 flex">
+                    <LinkButton
+                      text={"More"}
+                      px={"px-2"}
+                      width={"w-[130px]"}
+                      color="brown"
+                      link=""
+                    />
+                  </div>
+                </div>
+                <Parallax
+                  bgImage={"/img/top/business-advertising-sp.jpg"}
+                  strength={200}
+                  bgClassName="object-cover"
+                  contentClassName="h-[250px] sm:h-[400px]"
+                ></Parallax>
+              </li>
+              <li>
+                <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <p>05.Consulting</p>
+                  <h2 className="text-3xl font-bold mb-5">
+                    コンサルティング事業
+                  </h2>
+                  <p>
+                    Quatre.Incは、サブスクサービスの革命的な提案から、効果的なウェブ戦略、そして人材育成のサポート
+                    までトータルに手がけます。時代のニーズを捉え、ITを最大限活用しながら、事業の成長と継続的な成功を
+                    サポートします。事業の拡大、品質の向上、チームの結束により、新しい可能性を追求いたします。
+                  </p>
+                  <div className="mt-5 flex">
+                    <LinkButton
+                      text={"More"}
+                      px={"px-2"}
+                      width={"w-[130px]"}
+                      color="brown"
+                      link=""
+                    />
+                  </div>
+                </div>
+                <Parallax
+                  bgImage={"/img/top/business-consulting-sp.jpg"}
+                  strength={200}
+                  bgClassName="object-cover"
+                  contentClassName="h-[250px] sm:h-[400px]"
+                ></Parallax>
+              </li>
+              <li>
+                <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <p>06.Social Welfare</p>
+                  <h2 className="text-3xl font-bold mb-5">社会福祉事業</h2>
+                  <p>
+                    高齢者たちに安全かつ快適な生活空間を提供します。日常生活のサポートや医療的ケア、コミュニティ活動
+                    への参加などをサポートします。
+                    心身の健康を維持し、孤独感を軽減し、質の高い生活を享受するための場として不可欠です。
+                    高齢者一人一人のニーズに応じて、多様なサービスやプログラムを展開しております。
+                  </p>
+                  <div className="mt-5 flex">
+                    <LinkButton
+                      text={"More"}
+                      px={"px-2"}
+                      width={"w-[130px]"}
+                      color="brown"
+                      link=""
+                    />
+                  </div>
+                </div>
+                <Parallax
+                  bgImage={"/img/top/business-social-welfare-sp.jpg"}
+                  strength={200}
+                  bgClassName="object-cover"
+                  contentClassName="h-[250px] sm:h-[400px]"
+                ></Parallax>
+              </li>
+            </ul>
+          </div>
+          <div className="relative z-20 bg-white hidden xl:block">
+            <div className="lContainerM flex gap-20 justify-between">
+              <div className="w-6/12">
+                <div className="stickyTop pt-20 top-10 h-[100vh]">
+                  <div className="flex justify-start">
+                    <div className="flex flex-col items-center text-[#401d00]">
+                      <p className="flex items-center gap-1">
+                        <Image
+                          src="/img/common/symbol.svg"
+                          alt="quatre Symbol"
+                          width={20}
+                          height={20}
+                        />
+                        ビジネス
+                      </p>
+                      <h2 className="text-6xl montserrat font-bold">
+                        Business
+                      </h2>
+                    </div>
+                  </div>
+                  <p className="text-[#401d00] font-bold mt-2">
+                    Quatre.Incが手掛けるビジネスをご紹介します。
+                    <br />
+                    私たちは、常に価値を提供することで、
+                    <br />
+                    人々の笑顔を増やすことに取り組んでいます。
+                  </p>
+                  <div
+                    className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
+                      elementsObject.business1?.isVisible
+                        ? "opacity-100 translate-y-0 transition-all duration-500"
+                        : "opacity-0 translate-y-10 transition-all duration-500"
+                    }`}
+                  >
                     <p>01.Information Technology</p>
                     <h2 className="text-3xl font-bold mb-5">IT事業</h2>
                     <p>
@@ -581,15 +770,13 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <Parallax
-                    bgImage={"/img/top/business-it-sp.jpg"}
-                    strength={200}
-                    bgClassName="object-cover"
-                    contentClassName="h-[250px] sm:h-[400px]"
-                  ></Parallax>
-                </li>
-                <li>
-                  <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <div
+                    className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
+                      elementsObject.business2?.isVisible
+                        ? "opacity-100 translate-y-0 transition-all duration-500"
+                        : "opacity-0 translate-y-10 transition-all duration-500"
+                    }`}
+                  >
                     <p>02.Mergers and Acquisitions</p>
                     <h2 className="text-3xl font-bold mb-5">M&A事業</h2>
                     <p>
@@ -605,15 +792,13 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <Parallax
-                    bgImage={"/img/top/business-ma-sp.jpg"}
-                    strength={200}
-                    bgClassName="object-cover"
-                    contentClassName="h-[250px] sm:h-[400px]"
-                  ></Parallax>
-                </li>
-                <li>
-                  <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <div
+                    className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
+                      elementsObject.business3?.isVisible
+                        ? "opacity-100 translate-y-0 transition-all duration-500"
+                        : "opacity-0 translate-y-10 transition-all duration-500"
+                    }`}
+                  >
                     <p>03.Community</p>
                     <h2 className="text-3xl font-bold mb-5">
                       コミュニティ事業
@@ -633,15 +818,13 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <Parallax
-                    bgImage={"/img/top/business-community-sp.jpg"}
-                    strength={200}
-                    bgClassName="object-cover"
-                    contentClassName="h-[250px] sm:h-[400px]"
-                  ></Parallax>
-                </li>
-                <li>
-                  <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <div
+                    className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
+                      elementsObject.business4?.isVisible
+                        ? "opacity-100 translate-y-0 transition-all duration-500"
+                        : "opacity-0 translate-y-10 transition-all duration-500"
+                    }`}
+                  >
                     <p>04.Advertising</p>
                     <h2 className="text-3xl font-bold mb-5">広告代理事業</h2>
                     <p>
@@ -659,15 +842,13 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <Parallax
-                    bgImage={"/img/top/business-advertising-sp.jpg"}
-                    strength={200}
-                    bgClassName="object-cover"
-                    contentClassName="h-[250px] sm:h-[400px]"
-                  ></Parallax>
-                </li>
-                <li>
-                  <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <div
+                    className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
+                      elementsObject.business5?.isVisible
+                        ? "opacity-100 translate-y-0 transition-all duration-500"
+                        : "opacity-0 translate-y-10 transition-all duration-500"
+                    }`}
+                  >
                     <p>05.Consulting</p>
                     <h2 className="text-3xl font-bold mb-5">
                       コンサルティング事業
@@ -687,15 +868,13 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <Parallax
-                    bgImage={"/img/top/business-consulting-sp.jpg"}
-                    strength={200}
-                    bgClassName="object-cover"
-                    contentClassName="h-[250px] sm:h-[400px]"
-                  ></Parallax>
-                </li>
-                <li>
-                  <div className="lContainerM pt-20 sm:pt-32 pb-12 sm:pb-20">
+                  <div
+                    className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
+                      elementsObject.business6?.isVisible
+                        ? "opacity-100 translate-y-0 transition-all duration-500"
+                        : "opacity-0 translate-y-10 transition-all duration-500"
+                    }`}
+                  >
                     <p>06.Social Welfare</p>
                     <h2 className="text-3xl font-bold mb-5">社会福祉事業</h2>
                     <p>
@@ -714,249 +893,66 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <Parallax
-                    bgImage={"/img/top/business-social-welfare-sp.jpg"}
-                    strength={200}
-                    bgClassName="object-cover"
-                    contentClassName="h-[250px] sm:h-[400px]"
-                  ></Parallax>
-                </li>
-              </ul>
-            </div>
-          ) : (
-            <div className="relative z-20 bg-white">
-              <div className="lContainerM flex gap-20 justify-between">
-                <div className="w-6/12">
-                  <div className="stickyTop pt-20 top-10 h-[100vh]">
-                    <div className="flex justify-start">
-                      <div className="flex flex-col items-center text-[#401d00]">
-                        <p className="flex items-center gap-1">
-                          <Image
-                            src="/img/common/symbol.svg"
-                            alt="quatre Symbol"
-                            width={20}
-                            height={20}
-                          />
-                          ビジネス
-                        </p>
-                        <h2 className="text-6xl montserrat font-bold">
-                          Business
-                        </h2>
-                      </div>
-                    </div>
-                    <p className="text-[#401d00] font-bold mt-2">
-                      Quatre.Incが手掛けるビジネスをご紹介します。
-                      <br />
-                      私たちは、常に価値を提供することで、
-                      <br />
-                      人々の笑顔を増やすことに取り組んでいます。
-                    </p>
-                    <div
-                      className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                        elementsObject.business1?.isVisible
-                          ? "opacity-100 translate-y-0 transition-all duration-500"
-                          : "opacity-0 translate-y-10 transition-all duration-500"
-                      }`}
-                    >
-                      <p>01.Information Technology</p>
-                      <h2 className="text-3xl font-bold mb-5">IT事業</h2>
-                      <p>
-                        IT事業は、現代社会のイノベーションの先頭を走る分野となっています。日々進化するテクノロジーを活用し、ビジネスや日常生活をより便利かつ効率的にするソリューションを提供します。この分野での取り組みは、社会の持続的な成長を支えるとともに、新しいビジネスチャンスを創出しています。顧客のニーズを正確に捉え、先進技術を組み合わせることで、未来のライフスタイルや業務プロセスを再定義する可能性が広がっています。
-                      </p>
-                      <div className="mt-5 flex">
-                        <LinkButton
-                          text={"More"}
-                          px={"px-2"}
-                          width={"w-[130px]"}
-                          color="brown"
-                          link=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                        elementsObject.business2?.isVisible
-                          ? "opacity-100 translate-y-0 transition-all duration-500"
-                          : "opacity-0 translate-y-10 transition-all duration-500"
-                      }`}
-                    >
-                      <p>02.Mergers and Acquisitions</p>
-                      <h2 className="text-3xl font-bold mb-5">M&A事業</h2>
-                      <p>
-                        Quatre.IncのM&A事業は、新しい可能性を追求し、強力なシナジーを生む道を開きます。異なる企業の知識や技術を統合し、共同での成長を実現することが私たちの目標です。M&Aを通じて、持続可能な競争力を築き、業界のリーダーシップを確立し、お客様に更なるサービスと価値を提供いたします。
-                      </p>
-                      <div className="mt-5 flex">
-                        <LinkButton
-                          text={"More"}
-                          px={"px-2"}
-                          width={"w-[130px]"}
-                          color="brown"
-                          link=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                        elementsObject.business3?.isVisible
-                          ? "opacity-100 translate-y-0 transition-all duration-500"
-                          : "opacity-0 translate-y-10 transition-all duration-500"
-                      }`}
-                    >
-                      <p>03.Community</p>
-                      <h2 className="text-3xl font-bold mb-5">
-                        コミュニティ事業
-                      </h2>
-                      <p>
-                        Quatre.Incのコミュニティは、人々を繋ぎ合わせ、共通の価値や目的を共有する場を提供します。
-                        私たちのサービスを通じて、日々の生活に笑顔をもたらすことを目指しています。
-                        一人ひとりの幸せな瞬間を増やすために、最適なコミュニティとの出会いをサポートします。
-                      </p>
-                      <div className="mt-5 flex">
-                        <LinkButton
-                          text={"More"}
-                          px={"px-2"}
-                          width={"w-[130px]"}
-                          color="brown"
-                          link=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                        elementsObject.business4?.isVisible
-                          ? "opacity-100 translate-y-0 transition-all duration-500"
-                          : "opacity-0 translate-y-10 transition-all duration-500"
-                      }`}
-                    >
-                      <p>04.Advertising</p>
-                      <h2 className="text-3xl font-bold mb-5">広告代理事業</h2>
-                      <p>
-                        Quatre.Incは、デジタルからアナログまで、多彩なプロモーションをトータルにサポートします。ホームページの集客、
-                        店頭の楽しい企画、即効のリスティング広告、街中の注目の看板、そして心を掴むノベルティの提案。
-                        お客様の目と心をキャッチする最適な戦略を展開しております。
-                      </p>
-                      <div className="mt-5 flex">
-                        <LinkButton
-                          text={"More"}
-                          px={"px-2"}
-                          width={"w-[130px]"}
-                          color="brown"
-                          link=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                        elementsObject.business5?.isVisible
-                          ? "opacity-100 translate-y-0 transition-all duration-500"
-                          : "opacity-0 translate-y-10 transition-all duration-500"
-                      }`}
-                    >
-                      <p>05.Consulting</p>
-                      <h2 className="text-3xl font-bold mb-5">
-                        コンサルティング事業
-                      </h2>
-                      <p>
-                        Quatre.Incは、サブスクサービスの革命的な提案から、効果的なウェブ戦略、そして人材育成のサポート
-                        までトータルに手がけます。時代のニーズを捉え、ITを最大限活用しながら、事業の成長と継続的な成功を
-                        サポートします。事業の拡大、品質の向上、チームの結束により、新しい可能性を追求いたします。
-                      </p>
-                      <div className="mt-5 flex">
-                        <LinkButton
-                          text={"More"}
-                          px={"px-2"}
-                          width={"w-[130px]"}
-                          color="brown"
-                          link=""
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className={`text-[#401d00] absolute w-full bottom-[10vh] left-0 ${
-                        elementsObject.business6?.isVisible
-                          ? "opacity-100 translate-y-0 transition-all duration-500"
-                          : "opacity-0 translate-y-10 transition-all duration-500"
-                      }`}
-                    >
-                      <p>06.Social Welfare</p>
-                      <h2 className="text-3xl font-bold mb-5">社会福祉事業</h2>
-                      <p>
-                        高齢者たちに安全かつ快適な生活空間を提供します。日常生活のサポートや医療的ケア、コミュニティ活動
-                        への参加などをサポートします。
-                        心身の健康を維持し、孤独感を軽減し、質の高い生活を享受するための場として不可欠です。
-                        高齢者一人一人のニーズに応じて、多様なサービスやプログラムを展開しております。
-                      </p>
-                      <div className="mt-5 flex">
-                        <LinkButton
-                          text={"More"}
-                          px={"px-2"}
-                          width={"w-[130px]"}
-                          color="brown"
-                          link=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="pt-80 pb-40 w-6/12">
-                  <p ref={elementsObject.business1?.ref}>
-                    <Image
-                      src="/img/top/business-it.jpg"
-                      alt="IT事業"
-                      width={650}
-                      height={750}
-                      className="fit"
-                    />
-                  </p>
-                  <p className="mt-10" ref={elementsObject.business2?.ref}>
-                    <Image
-                      src="/img/top/business-ma.jpg"
-                      alt="M&A事業"
-                      width={650}
-                      height={750}
-                      className="fit"
-                    />
-                  </p>
-                  <p className="mt-10" ref={elementsObject.business3?.ref}>
-                    <Image
-                      src="/img/top/business-community.jpg"
-                      alt="コミュニティ事業"
-                      width={650}
-                      height={750}
-                      className="fit"
-                    />
-                  </p>
-                  <p className="mt-10" ref={elementsObject.business4?.ref}>
-                    <Image
-                      src="/img/top/business-advertising.jpg"
-                      alt="広告代理事業"
-                      width={650}
-                      height={750}
-                      className="fit"
-                    />
-                  </p>
-                  <p className="mt-10" ref={elementsObject.business5?.ref}>
-                    <Image
-                      src="/img/top/business-consulting.jpg"
-                      alt="コンサルティング事業"
-                      width={650}
-                      height={750}
-                      className="fit"
-                    />
-                  </p>
-                  <p className="mt-10" ref={elementsObject.business6?.ref}>
-                    <Image
-                      src="/img/top/business-social-welfare.jpg"
-                      alt="社会福祉事業"
-                      width={650}
-                      height={750}
-                      className="fit"
-                    />
-                  </p>
                 </div>
               </div>
+              <div className="pt-80 pb-40 w-6/12">
+                <p ref={elementsObject.business1?.ref}>
+                  <Image
+                    src="/img/top/business-it.jpg"
+                    alt="IT事業"
+                    width={650}
+                    height={750}
+                    className="fit"
+                  />
+                </p>
+                <p className="mt-10" ref={elementsObject.business2?.ref}>
+                  <Image
+                    src="/img/top/business-ma.jpg"
+                    alt="M&A事業"
+                    width={650}
+                    height={750}
+                    className="fit"
+                  />
+                </p>
+                <p className="mt-10" ref={elementsObject.business3?.ref}>
+                  <Image
+                    src="/img/top/business-community.jpg"
+                    alt="コミュニティ事業"
+                    width={650}
+                    height={750}
+                    className="fit"
+                  />
+                </p>
+                <p className="mt-10" ref={elementsObject.business4?.ref}>
+                  <Image
+                    src="/img/top/business-advertising.jpg"
+                    alt="広告代理事業"
+                    width={650}
+                    height={750}
+                    className="fit"
+                  />
+                </p>
+                <p className="mt-10" ref={elementsObject.business5?.ref}>
+                  <Image
+                    src="/img/top/business-consulting.jpg"
+                    alt="コンサルティング事業"
+                    width={650}
+                    height={750}
+                    className="fit"
+                  />
+                </p>
+                <p className="mt-10" ref={elementsObject.business6?.ref}>
+                  <Image
+                    src="/img/top/business-social-welfare.jpg"
+                    alt="社会福祉事業"
+                    width={650}
+                    height={750}
+                    className="fit"
+                  />
+                </p>
+              </div>
             </div>
-          )}
+          </div>
         </section>
         <section className="relative w-full overflow-x-hidden">
           <div className="relative z-20 mt-[300px] sm:mt-[500px]">

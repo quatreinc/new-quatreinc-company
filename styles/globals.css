@@ -7,9 +7,9 @@ body {
   font-size: 3.8647342995vw;
 }
 
-/* main {
+main {
   overflow-x: hidden;
-} */
+}
 
 .yuGothic {
   font-family: YuGothic, "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans",
@@ -140,5 +140,11 @@ body {
   .plus::before,
   .plus::after {
     display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  main {
+    overflow-x: visible;
   }
 }
