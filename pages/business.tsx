@@ -149,7 +149,7 @@ const Business = () => {
         </motion.div>
       </div>
       <section>
-        <div className="bg-[#ead2ab] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center">
+        <div className="bg-[#ead2ab] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center overflow-x-hidden">
           <div className="lContainerl flex flex-col xl:flex-row gap-10 items-center relative">
             <motion.div
               animate={
