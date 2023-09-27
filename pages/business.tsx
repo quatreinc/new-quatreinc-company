@@ -919,7 +919,9 @@ const Business = () => {
                     transition={{ delay: 0.3, duration: 0.3 }}
                   >
                     <p>Social Welfare Work</p>
-                    <p className="text-4xl font-bold">社会福祉事業</p>
+                    <p className="text-[7vw] sm:text-4xl font-bold">
+                      社会福祉事業
+                    </p>
                   </motion.div>
                   <motion.h2
                     animate={
@@ -928,7 +930,7 @@ const Business = () => {
                         : { opacity: [1, 0], y: [0, 15] }
                     }
                     transition={{ delay: 0.5, duration: 0.3 }}
-                    className="text-2xl font-bold mt-12 mb-4"
+                    className="text-[5vw] sm:text-2xl font-bold mt-12 mb-4"
                   >
                     デジタル広告から伝統的なメディアまで、
                     <br />
