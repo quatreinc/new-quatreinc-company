@@ -148,7 +148,7 @@ const Business = () => {
           <h1 className="text-[#fff0de]">ビジネス</h1>
         </motion.div>
       </div>
-      <section>
+      {/* <section>
         <div className="bg-[#ead2ab] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center overflow-x-hidden">
           <div className="lContainerl flex flex-col xl:flex-row gap-10 items-center relative">
             <motion.div
@@ -1151,7 +1151,7 @@ const Business = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   );
 };
