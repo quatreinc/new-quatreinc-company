@@ -159,9 +159,9 @@ const Business = () => {
                 }
               }
               transition={{ delay: 0.1, duration: 0.3 }}
-              className="montserrat font-bold text-[8vw] xl:text-8xl text-[#401d00] absolute top-5 xl:top-0 left-5 xl:left-[40%] opacity-0 z-10"
+              className="montserrat font-bold text-[8vw] xl:text-9xl text-[#401d00] absolute top-5 xl:top-0 left-5 xl:left-[40%] opacity-0 z-10"
             >
-              <p>01</p>
+              <p className="tracking-tighter">01</p>
             </motion.div>
             <div className="order-2 xl:order-1 xl:w-7/12">
               <div>
@@ -251,9 +251,9 @@ const Business = () => {
                   }
                 }
                 transition={{ delay: 0.1, duration: 0.3 }}
-                className="montserrat font-bold text-[8vw] xl:text-8xl text-[#401d00] absolute top-20 left-10 opacity-0"
+                className="montserrat font-bold text-[8vw] xl:text-9xl text-[#401d00] absolute top-20 left-1 opacity-0"
               >
-                <p>02</p>
+                <p className="tracking-tighter">02</p>
               </motion.div>
               <div>
                 <div className="text-[#401d00]">
@@ -353,7 +353,19 @@ const Business = () => {
           ref={elementsObject.community?.ref}
         >
           <div className="lContainerl flex flex-col xl:flex-row xl:gap-10">
-            <div className="xl:w-7/12 order-2 xl:order-1">
+            <div className="xl:w-7/12 order-2 xl:order-1 relative">
+              <motion.div
+                animate={
+                  elementsObject.community?.hasAnimated && {
+                    opacity: [0, 1],
+                    y: [15, 0],
+                  }
+                }
+                transition={{ delay: 0.1, duration: 0.3 }}
+                className="montserrat font-bold text-[8vw] xl:text-9xl text-[#401d00] absolute top-0 md:top-[-60px] xl:top-[-50px] right-0 opacity-0"
+              >
+                <p className="tracking-tighter">03</p>
+              </motion.div>
               <div>
                 <div className="text-[#401d00]">
                   <motion.div
@@ -409,18 +421,6 @@ const Business = () => {
                 animate={
                   elementsObject.community?.hasAnimated && {
                     opacity: [0, 1],
-                    y: [15, 0],
-                  }
-                }
-                transition={{ delay: 0.1, duration: 0.3 }}
-                className="montserrat font-bold text-[8vw] xl:text-8xl text-[#401d00] absolute top-14 xl:top-[-8vh] right-0 opacity-0"
-              >
-                <p>03</p>
-              </motion.div>
-              <motion.div
-                animate={
-                  elementsObject.community?.hasAnimated && {
-                    opacity: [0, 1],
                     y: [500, -20],
                   }
                 }
@@ -452,9 +452,9 @@ const Business = () => {
                 }
               }
               transition={{ delay: 0.1, duration: 0.3 }}
-              className="montserrat font-bold text-[8vw] xl:text-8xl text-white absolute top-20 right-20 opacity-0"
+              className="montserrat font-bold text-[8vw] xl:text-9xl text-white absolute top-20 right-20 opacity-0"
             >
-              <p>04</p>
+              <p className="tracking-tighter">04</p>
             </motion.div>
             <div className="text-white">
               <motion.div
@@ -743,9 +743,9 @@ const Business = () => {
                 }
               }
               transition={{ delay: 0.1, duration: 0.3 }}
-              className="montserrat font-bold text-[8vw] xl:text-8xl text-[#401d00] absolute top-10 xl:top-20 left-20 opacity-0"
+              className="montserrat font-bold text-[8vw] xl:text-9xl text-[#401d00] absolute top-10 xl:top-20 left-10 sm:left-20 opacity-0"
             >
-              <p>05</p>
+              <p className="tracking-tighter">05</p>
             </motion.div>
             <div className="lContainerl pt-20 xl:pt-48 pb-10 xl:pb-32">
               <div className="text-[#401d00] text-center">
@@ -994,9 +994,9 @@ const Business = () => {
                     : { opacity: [1, 0], y: [0, 15] }
                 }
                 transition={{ delay: 0.1, duration: 0.3 }}
-                className="montserrat font-bold text-[8vw] xl:text-8xl text-white absolute top-0 lg:top-10 left-[80%] lg:left-[50%] opacity-0"
+                className="montserrat font-bold text-[8vw] xl:text-9xl text-white absolute top-0 lg:top-10 left-[80%] lg:left-[50%] opacity-0"
               >
-                <p>06</p>
+                <p className="tracking-tighter">06</p>
               </motion.div>
             </div>
           </div>
