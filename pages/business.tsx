@@ -75,6 +75,7 @@ const Business = () => {
   const [device, setDevice] = useState<string | undefined>(undefined);
   const [slidesCount, setSlidesCount] = useState<number>(2.5);
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const elementsRef = useRef<HTMLDivElement[]>([]);
 
   useSmoothScroll({ gestureOrientation: "vertical" });
 
@@ -83,8 +84,6 @@ const Business = () => {
     textContentProps: undefined,
     parallaxEffect,
   });
-
-  const elementsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     const parser = new UAParser();
@@ -118,13 +117,14 @@ const Business = () => {
 
   useEffect(() => {
     const elements = elementsRef.current;
+    console.log("elements", elements);
     if (elements === null) return;
     const maxHeight = Math.max(
       ...elements.map((element) => element.clientHeight)
     );
-    console.log(maxHeight);
+    console.log("maxHeight", maxHeight);
     elements.forEach((element) => (element.style.height = `${maxHeight}px`));
-  }, []);
+  }, [elementsObject.advertising?.hasAnimated]);
 
   return (
     <Layout
