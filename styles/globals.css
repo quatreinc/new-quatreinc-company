@@ -138,3 +138,16 @@ body {
     display: none;
   }
 }
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  width: 30px;
+  height: 30px;
+  font-size: 15px !important;
+  background-color: rgba(66, 30, 0, 0.8) !important;
+  color: #fff !important;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

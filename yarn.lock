@@ -349,6 +349,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-slick@npm:^0.23.10":
+  version: 0.23.10
+  resolution: "@types/react-slick@npm:0.23.10"
+  dependencies:
+    "@types/react": "*"
+  checksum: 1e53fe8385e853881741a450d15c52d6433334b671fee4044939037f8e5b83968cb91fd9dbe7e6686e906882ebcf370b81bd55b6688f8e810020e23a968c0385
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:18.2.22":
   version: 18.2.22
   resolution: "@types/react@npm:18.2.22"
@@ -3240,6 +3249,7 @@ __metadata:
     "@types/node": 20.6.2
     "@types/react": 18.2.22
     "@types/react-dom": 18.2.7
+    "@types/react-slick": ^0.23.10
     "@types/ua-parser-js": ^0.7.37
     autoprefixer: 10.4.15
     eslint: 8.49.0
@@ -3251,6 +3261,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-parallax: ^3.5.1
+    slick-carousel: ^1.8.1
     swiper: ^10.3.0
     tailwindcss: 3.3.3
     typescript: 5.2.2
@@ -3593,6 +3604,15 @@ __metadata:
   version: 3.0.0
   resolution: "slash@npm:3.0.0"
   checksum: 94a93fff615f25a999ad4b83c9d5e257a7280c90a32a7cb8b4a87996e4babf322e469c42b7f649fd5796edd8687652f3fb452a86dc97a816f01113183393f11c
+  languageName: node
+  linkType: hard
+
+"slick-carousel@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "slick-carousel@npm:1.8.1"
+  peerDependencies:
+    jquery: ">=1.8.0"
+  checksum: acaad391e4d8bc1c7fdb8d361faa1f1d60829b31d618b54bc38c0550a59b26de36537e0ab4bc0364176ec11d1a61d0cf11e99d8d5b1285d656673c9a1a719257
   languageName: node
   linkType: hard
 

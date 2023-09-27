@@ -10,13 +10,14 @@ type ElementProps = {
 export const useParallax = ({
   elementsProps,
   textContentProps,
+  parallaxEffect,
 }: {
   elementsProps: ElementProps[];
   textContentProps: string | undefined;
+  parallaxEffect: MutableRefObject<HTMLLIElement | HTMLDivElement | null>;
 }) => {
   const [repeatedText, setRepeatedText] = useState("");
   const [elements, setElements] = useState(elementsProps);
-  const parallaxEffect = useRef<HTMLLIElement | null>(null);
   const [offsetY, setOffsetY] = useState(0);
   const [scrollX, setScrollX] = useState(0);
 

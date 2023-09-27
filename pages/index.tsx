@@ -7,6 +7,7 @@ import { LinkButton } from "@/components/LinkButton";
 import { Parallax } from "react-parallax";
 import { useParallax } from "@/hooks/useParallax";
 import { UAParser } from "ua-parser-js";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("全て");
@@ -113,16 +114,19 @@ export default function Home() {
     },
   ];
 
-  const { elementsObject, parallaxEffect, offsetY, scrollX, repeatedText } =
-    useParallax({
-      elementsProps: elements,
-      textContentProps: textContent,
-    });
+  const parallaxEffect = useRef<HTMLLIElement | null>(null);
+
+  const { elementsObject, offsetY, scrollX, repeatedText } = useParallax({
+    elementsProps: elements,
+    textContentProps: textContent,
+    parallaxEffect,
+  });
+
+  useSmoothScroll({ gestureOrientation: "vertical" });
 
   useEffect(() => {
     const parser = new UAParser();
     setDevice(parser.getDevice().type);
-    console.log(parser.getDevice().type);
   }, [device]);
 
   return (
@@ -139,7 +143,7 @@ export default function Home() {
               className={`${
                 (elementsObject.last?.isVisible && device !== "mobile") ||
                 (elementsObject.last?.isVisible && device !== "tablet")
-                  ? "transition-all duration-1000 duration- translate-y-[-500px] opacity-0"
+                  ? "transition-all duration-1000 translate-y-[-500px] opacity-0"
                   : "transition-all duration-1000 translate-y-0 opacity-100"
               }`}
             >
