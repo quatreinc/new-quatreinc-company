@@ -897,7 +897,7 @@ const Business = () => {
                 bgImage={"/img/business/consulting-img.jpg"}
                 strength={200}
                 bgClassName="object-cover"
-                contentClassName="h-[90vh] max-h-[500px] w-full"
+                contentClassName="h-64 sm:h-[90vh] max-h-[500px] w-full"
               ></Parallax>
             </motion.div>
           </div>
