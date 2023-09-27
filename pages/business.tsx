@@ -98,7 +98,7 @@ const Business = () => {
       ...elements.map((element) => element.clientHeight)
     );
     elements.forEach((element) => (element.style.height = `${maxHeight}px`));
-  }, []);
+  }, [elementsRef]);
 
   useEffect(() => {
     const handleResize = () => {
