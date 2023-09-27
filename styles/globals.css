@@ -41,13 +41,15 @@ body {
 .lContainerM {
   max-width: 1400px;
   width: 90%;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .lContainerl {
   max-width: 1640px;
   width: 90%;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .hW-120pa {
