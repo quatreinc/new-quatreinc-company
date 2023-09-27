@@ -820,7 +820,7 @@ const Business = () => {
                       height={79}
                     />
                   </p>
-                  <p className="text-[#37B6F2] font-bold mb-5 sm:mb-0 xl:mb-5 text-[5vw] sm:text-[2vw] xl:text-2xl">
+                  <p className="text-[#37B6F2] font-bold mb-5 sm:mb-0 xl:mb-5 text-[5vw] sm:text-[2vw] xl:text-[1.7vw]">
                     サブスクリプション構築
                     <br />
                     コンサルティング
@@ -848,7 +848,7 @@ const Business = () => {
                       height={79}
                     />
                   </p>
-                  <p className="text-[#a5d445] font-bold mb-5 sm:mb-0 xl:mb-5 text-[5vw] sm:text-[2vw] xl:text-2xl">
+                  <p className="text-[#a5d445] font-bold mb-5 sm:mb-0 xl:mb-5 text-[5vw] sm:text-[2vw] xl:text-[1.7vw]">
                     ウェブマーケティング
                     <br />
                     集客コンサルティング
@@ -876,7 +876,7 @@ const Business = () => {
                       height={76}
                     />
                   </p>
-                  <p className="text-[#f4a953] font-bold mb-5 sm:mb-0 xl:mb-14 text-[5vw] sm:text-[2vw] xl:text-2xl">
+                  <p className="text-[#f4a953] font-bold mb-5 sm:mb-0 xl:mb-14 text-[5vw] sm:text-[2vw] xl:text-[1.7vw]">
                     人材育成コンサルティング
                   </p>
                 </div>
