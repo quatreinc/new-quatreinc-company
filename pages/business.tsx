@@ -92,15 +92,6 @@ const Business = () => {
   }, [device]);
 
   useEffect(() => {
-    const elements = elementsRef.current;
-    if (elements === null) return;
-    const maxHeight = Math.max(
-      ...elements.map((element) => element.clientHeight)
-    );
-    elements.forEach((element) => (element.style.height = `${maxHeight}px`));
-  }, [elementsRef]);
-
-  useEffect(() => {
     const handleResize = () => {
       const w = window.innerWidth;
       setWindowWidth(w);
@@ -123,6 +114,16 @@ const Business = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, []);
+
+  useEffect(() => {
+    const elements = elementsRef.current;
+    if (elements === null) return;
+    const maxHeight = Math.max(
+      ...elements.map((element) => element.clientHeight)
+    );
+    console.log(maxHeight);
+    elements.forEach((element) => (element.style.height = `${maxHeight}px`));
   }, []);
 
   return (
@@ -420,7 +421,7 @@ const Business = () => {
                 animate={
                   elementsObject.community?.hasAnimated && {
                     opacity: [0, 1],
-                    y: [15, 0],
+                    y: [500, -20],
                   }
                 }
                 transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
