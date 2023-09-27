@@ -105,9 +105,13 @@ const Business = () => {
       const w = window.innerWidth;
       setWindowWidth(w);
 
-      if (641 <= w && w <= 835) {
+      if (1500 < w && 1920 <= w) {
+        setSlidesCount(3.5);
+      } else if (1500 <= w) {
+        setSlidesCount(3.2);
+      } else if (640 <= w && w <= 835) {
         setSlidesCount(1.8);
-      } else if (w <= 640) {
+      } else if (w < 640) {
         setSlidesCount(1);
       } else {
         setSlidesCount(2.5);

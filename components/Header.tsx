@@ -32,7 +32,6 @@ export const HeaderMemo: FC<Props> = ({ color = "brown" }) => {
     };
 
     handleScroll();
-
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -164,31 +163,28 @@ export const HeaderMemo: FC<Props> = ({ color = "brown" }) => {
           }`}
         >
           <ul className="flex items-center justify-center flex-col gap-7 text-white">
-            <li>
-              <Link href="" prefetch={false}>
-                TOP
-              </Link>
-            </li>
-            <li>
-              <Link href="" prefetch={false}>
-                BUSINESS
-              </Link>
-            </li>
-            <li>
-              <Link href="" prefetch={false}>
-                NEWS
-              </Link>
-            </li>
-            <li>
-              <Link href="" prefetch={false}>
-                MAGAZINE
-              </Link>
-            </li>
-            <li>
-              <Link href="" prefetch={false}>
-                ABOUT
-              </Link>
-            </li>
+            {navigationList.map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  prefetch={false}
+                  className={`
+                  ${
+                    item.current
+                      ? color === "brown"
+                        ? "brownBorderBottomColor"
+                        : "text-white border-b border-b-white"
+                      : color === "brown"
+                      ? "brownTextColor"
+                      : "text-white"
+                  }
+                    hover:opacity-70 transition-opacity duration-300
+                `}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
             <li>
               <Link
                 href="/contact"
