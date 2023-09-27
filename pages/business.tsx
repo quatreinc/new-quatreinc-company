@@ -149,7 +149,7 @@ const Business = () => {
         </motion.div>
       </div>
       <section>
-        <div className="bg-[#ead2ab] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center overflow-x-hidden">
+        <div className="bg-[#ead2ab] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center">
           <div className="lContainerl flex flex-col xl:flex-row gap-10 items-center relative">
             <motion.div
               animate={
@@ -238,7 +238,7 @@ const Business = () => {
       </section>
       <section>
         <div
-          className="bg-[#f2f2f2] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center overflow-x-hidden"
+          className="bg-[#f2f2f2] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center"
           ref={elementsObject.ma?.ref}
         >
           <div className="lContainerl flex flex-col xl:flex-row gap-10 items-center">
@@ -349,7 +349,7 @@ const Business = () => {
       </section>
       <section>
         <div
-          className="bg-[#ead2ab] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center overflow-x-hidden"
+          className="bg-[#ead2ab] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center"
           ref={elementsObject.community?.ref}
         >
           <div className="lContainerl flex flex-col xl:flex-row xl:gap-10">
@@ -439,7 +439,7 @@ const Business = () => {
         </div>
       </section>
       <section>
-        <div className="bg-[#401d00] relative pb-20 px-5 overflow-x-hidden">
+        <div className="bg-[#401d00] relative pb-20 px-5">
           <div
             className="lContainerl pt-20 sm:pt-48 pb-14 sm:pb-32"
             ref={elementsObject.advertising?.ref}
@@ -730,7 +730,7 @@ const Business = () => {
         </div>
       </section>
       <section>
-        <div className="bg-[#f2f2f2] overflow-x-hidden">
+        <div className="bg-[#f2f2f2]">
           <div
             className="relative pb-10 px-5"
             ref={elementsObject.consulting?.ref}
@@ -905,7 +905,7 @@ const Business = () => {
       </section>
       <section>
         <div
-          className="bg-[#401d00] relative py-20 xl:py-0 xl:min-h-[95vh] flex items-center overflow-x-hidden"
+          className="bg-[#401d00] relative py-20 xl:py-0 xl:min-h-[95vh] flex items-center"
           ref={elementsObject.socialWelfareWork?.ref}
         >
           <div className="lContainerl lg:flex gap-10 items-center relative">
@@ -1004,7 +1004,7 @@ const Business = () => {
       </section>
       <section>
         <div
-          className="h-[95vh] flex justify-center items-center w-full overflow-x-hidden"
+          className="h-[95vh] flex justify-center items-center w-full"
           ref={elementsObject.attention?.ref}
         >
           <div>
