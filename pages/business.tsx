@@ -134,11 +134,11 @@ const Business = () => {
       setRef={elementsObject.last?.ref}
     >
       <div
-        className="bg-[#401d00] h-[300px] sm:h-[500px] flex items-center pt-10"
+        className="bg-[#401d00] h-[300px] sm:h-[500px] flex items-center pt-10 overflow-x-hidden"
         ref={elementsObject.it?.ref}
       >
         <motion.div
-          animate={{ opacity: [0, 1], x: [100, 0] }}
+          animate={{ opacity: [0, 1], x: [20, 0] }}
           transition={{ duration: 1 }}
           className="text-white lContainerl"
         >
@@ -148,7 +148,7 @@ const Business = () => {
           <h1 className="text-[#fff0de]">ビジネス</h1>
         </motion.div>
       </div>
-      {/* <section>
+      <section>
         <div className="bg-[#ead2ab] relative py-16 xl:py-0 xl:min-h-[95vh] flex items-center overflow-x-hidden">
           <div className="lContainerl flex flex-col xl:flex-row gap-10 items-center relative">
             <motion.div
@@ -1151,7 +1151,7 @@ const Business = () => {
             </motion.div>
           </div>
         </div>
-      </section> */}
+      </section>
     </Layout>
   );
 };
