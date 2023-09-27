@@ -159,7 +159,7 @@ const Business = () => {
                 }
               }
               transition={{ delay: 0.1, duration: 0.3 }}
-              className="montserrat font-bold text-[8vw] xl:text-9xl text-[#401d00] absolute top-5 xl:top-0 left-5 xl:left-[40%] opacity-0 z-10"
+              className="montserrat font-bold text-[8vw] xl:text-8xl text-[#401d00] absolute top-5 xl:top-0 left-5 xl:left-[40%] opacity-0 z-10"
             >
               <p className="tracking-tighter">01</p>
             </motion.div>
@@ -251,7 +251,7 @@ const Business = () => {
                   }
                 }
                 transition={{ delay: 0.1, duration: 0.3 }}
-                className="montserrat font-bold text-[8vw] xl:text-9xl text-[#401d00] absolute top-20 left-1 opacity-0"
+                className="montserrat font-bold text-[8vw] xl:text-8xl text-[#401d00] absolute top-20 left-1 opacity-0"
               >
                 <p className="tracking-tighter">02</p>
               </motion.div>
@@ -362,7 +362,7 @@ const Business = () => {
                   }
                 }
                 transition={{ delay: 0.1, duration: 0.3 }}
-                className="montserrat font-bold text-[8vw] xl:text-9xl text-[#401d00] absolute top-0 md:top-[-60px] xl:top-[-50px] right-0 opacity-0"
+                className="montserrat font-bold text-[8vw] xl:text-8xl text-[#401d00] absolute top-0 md:top-[-60px] xl:top-[-50px] right-0 opacity-0"
               >
                 <p className="tracking-tighter">03</p>
               </motion.div>
@@ -452,7 +452,7 @@ const Business = () => {
                 }
               }
               transition={{ delay: 0.1, duration: 0.3 }}
-              className="montserrat font-bold text-[8vw] xl:text-9xl text-white absolute top-20 right-20 opacity-0"
+              className="montserrat font-bold text-[8vw] xl:text-8xl text-white absolute top-20 right-20 opacity-0"
             >
               <p className="tracking-tighter">04</p>
             </motion.div>
@@ -743,7 +743,7 @@ const Business = () => {
                 }
               }
               transition={{ delay: 0.1, duration: 0.3 }}
-              className="montserrat font-bold text-[8vw] xl:text-9xl text-[#401d00] absolute top-10 xl:top-20 left-10 sm:left-20 opacity-0"
+              className="montserrat font-bold text-[8vw] xl:text-8xl text-[#401d00] absolute top-10 xl:top-20 left-10 sm:left-20 opacity-0"
             >
               <p className="tracking-tighter">05</p>
             </motion.div>
@@ -994,7 +994,7 @@ const Business = () => {
                     : { opacity: [1, 0], y: [0, 15] }
                 }
                 transition={{ delay: 0.1, duration: 0.3 }}
-                className="montserrat font-bold text-[8vw] xl:text-9xl text-white absolute top-0 lg:top-10 left-[80%] lg:left-[50%] opacity-0"
+                className="montserrat font-bold text-[8vw] xl:text-8xl text-white absolute top-0 lg:top-10 left-[80%] lg:left-[50%] opacity-0"
               >
                 <p className="tracking-tighter">06</p>
               </motion.div>
