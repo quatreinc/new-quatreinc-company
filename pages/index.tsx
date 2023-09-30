@@ -8,6 +8,7 @@ import { Parallax } from "react-parallax";
 import { useParallax } from "@/hooks/useParallax";
 import { UAParser } from "ua-parser-js";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
+import { NewsList } from "@/components/NewsList";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("全て");
@@ -486,59 +487,14 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-white opacity-0"
             >
-              <ul className="flex flex-wrap gap-5 pb-7 border-b">
-                <li>
-                  <button
-                    onClick={() => handleTagClick("全て")}
-                    className={`inline-block border border-white py-1 px-6 rounded-full transition-colors duration-300 ${
-                      activeTab === "全て"
-                        ? "bg-white text-[#401d00]"
-                        : "text-white hover:bg-white hover:text-[#401d00]"
-                    }`}
-                  >
-                    全て
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleTagClick("お知らせ")}
-                    className={`inline-block border border-white py-1 px-6 rounded-full transition-colors duration-300 ${
-                      activeTab === "お知らせ"
-                        ? "bg-white text-[#401d00]"
-                        : "text-white hover:bg-white hover:text-[#401d00]"
-                    }`}
-                  >
-                    お知らせ
-                  </button>
-                </li>
-              </ul>
-              <ul>
-                <li className="border-b py-7 flex gap-2 sm:gap-5 flex-col sm:flex-row">
-                  <time dateTime="2023.8.24">2023.8.24</time>
-                  <p>
-                    価値を提供し続け、地球上の笑顔を創造する。価値を提供し続け、地球上の笑顔を創造する。価値を提供し続け、地球上の笑顔を価値
-                    を提供し続け、地球上の笑顔を創造する。価値を提供し続け、地球上の笑顔を創造する。創造する。
-                  </p>
-                </li>
-                <li className="border-b py-7 flex gap-2 sm:gap-5 flex-col sm:flex-row">
-                  <time dateTime="2023.8.24">2023.8.24</time>
-                  <p>
-                    価値を提供し続け、地球上の笑顔を創造する。価値を提供し続け、地球上の笑顔を創造する。
-                  </p>
-                </li>
-                <li className="border-b py-7 flex gap-2 sm:gap-5 flex-col sm:flex-row">
-                  <time dateTime="2023.8.24">2023.8.24</time>
-                  <p>
-                    価値を提供し続け、地球上の笑顔を創造する。価値を提供し続け、地球上の笑顔を創造する。
-                  </p>
-                </li>
-                <li className="border-b py-7 flex gap-2 sm:gap-5 flex-col sm:flex-row">
-                  <time dateTime="2023.8.24">2023.8.24</time>
-                  <p>
-                    価値を提供し続け、地球上の笑顔を創造する。価値を提供し続け、地球上の笑顔を創造する。
-                  </p>
-                </li>
-              </ul>
+              <NewsList
+                buttonBorderColor={"border-white"}
+                currentColor={"bg-white text-[#401d00]"}
+                notCurrentColor={
+                  "text-white hover:bg-white hover:text-[#401d00]"
+                }
+                lineColor={"border-white"}
+              />
             </motion.div>
           </div>
         </section>

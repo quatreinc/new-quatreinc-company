@@ -6,12 +6,12 @@ import { Parallax } from "react-parallax";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Link from "next/link";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
 import { UAParser } from "ua-parser-js";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Business = () => {
   const elements = [
